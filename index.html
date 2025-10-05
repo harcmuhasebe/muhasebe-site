@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harç - Yapay Zeka ile İnşaat Projelerinizi Yönetin</title>
+    <meta name="description" content="İnşaat sektörü için özel geliştirilmiş, yapay zeka destekli muhasebe yazılımı. OCR ile fatura okuma, akıllı raporlama ve mobil uyumluluk.">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <img src="assets/images/logo.png" alt="Harç" class="logo-img">
+                </a>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#features" class="nav-link">Özellikler</a>
+                <a href="#screenshots" class="nav-link">Neden Biz?</a>
+                    <a href="#solutions" class="nav-link">Çözümler</a>
+                <a href="#faq" class="nav-link">SSS</a>
+                <a href="#contact-form" class="nav-link contact-btn">İletişime Geçin</a>
+            </div>
+            <div class="nav-buttons">
+                <a href="#contact-form" class="btn btn-primary">Ücretsiz Deneyin</a>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">İnşaat Projelerinizi Yapay Zeka ile Yönetin</h1>
+                <p class="hero-subtitle">Manuel veri girişini bitirin, hakediş ve maliyet takibini otomatikleştirin. Harç ile zaman kazanın, kârlılığınızı artırın.</p>
+                <div class="hero-buttons">
+                    <a href="#contact-form" class="btn btn-primary btn-large">Hemen Başla</a>
+                    <button class="btn btn-secondary btn-large" id="demoBtn">Demoyu İncele</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/images/dashboard-mockup.png" alt="İnşaat Muhasebe PRO Dashboard" class="hero-mockup">
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem-section" id="problem">
+        <div class="container">
+            <h2 class="section-title">Sektörün Yaygın Sorunları Tanıdık Geliyor mu?</h2>
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <h3>Karmaşık Arayüzler</h3>
+                    <p>Kullanımı zor programlarla zaman kaybetmeyin.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3>Manuel Veri Girişi</h3>
+                    <p>Faturaları ve fişleri tek tek girmekten yoruldunuz mu?</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <h3>Yetersiz Raporlama</h3>
+                    <p>Anlık ve geleceğe dönük analizler alamıyor musunuz?</p>
+                </div>
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-unlink"></i>
+                    </div>
+                    <h3>Entegrasyon Eksikliği</h3>
+                    <p>Muhasebe ve proje yönetimi programlarınız birbiriyle konuşmuyor mu?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <h2 class="section-title">Harç ile Kontrol Sizde</h2>
+            <div class="features-tabs">
+                <div class="tab-buttons">
+                    <button class="tab-btn active" data-tab="ai-automation">Yapay Zeka ile Otomasyon</button>
+                    <button class="tab-btn" data-tab="smart-reporting">Akıllı Raporlama</button>
+                    <button class="tab-btn" data-tab="mobile-friendly">Mobil Uyumluluk</button>
+                    <button class="tab-btn" data-tab="chatbot">Aktif Chatbot</button>
+                    <button class="tab-btn" data-tab="integration">Kolay Entegrasyon</button>
+                </div>
+                <div class="tab-content">
+                    <div class="tab-panel active" id="ai-automation">
+                        <div class="tab-panel-content">
+                            <div class="tab-text">
+                                <h3>Yapay Zeka ile Otomasyon (OCR)</h3>
+                                <p>Faturalarınızın ve fişlerinizin fotoğrafını çekin, gerisini yapay zekaya bırakın. OCR teknolojimiz, bilgileri otomatik olarak okur ve projenize maliyet olarak işler.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Otomatik fatura okuma</li>
+                                    <li><i class="fas fa-check"></i> Akıllı veri sınıflandırma</li>
+                                    <li><i class="fas fa-check"></i> Hata oranında %95 azalma</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image">
+                                <img src="assets/images/ocr-feature.png" alt="OCR Özelliği" class="feature-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="smart-reporting">
+                        <div class="tab-panel-content">
+                            <div class="tab-text">
+                                <h3>Akıllı Raporlama ve Analiz</h3>
+                                <p>Standart raporların ötesine geçin. Tahmine dayalı analizlerle bütçe aşımlarını önceden görün, akıllı panolarla projenizin nabzını tutun.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Tahmine dayalı analizler</li>
+                                    <li><i class="fas fa-check"></i> Gerçek zamanlı KPI'lar</li>
+                                    <li><i class="fas fa-check"></i> Özelleştirilebilir raporlar</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image">
+                                <img src="assets/images/report-feature.png" alt="Raporlama Özelliği" class="feature-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="mobile-friendly">
+                        <div class="tab-panel-content">
+                            <div class="tab-text">
+                                <h3>Mobil ve Kullanıcı Dostu Arayüz</h3>
+                                <p>Saha ekibiniz bile kolayca kullanabilir. Cep telefonundan masraf girişi, malzeme talebi ve puantaj takibi yapın. Karmaşaya son, basitliğe merhaba deyin.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> Mobil uyumlu arayüz</li>
+                                    <li><i class="fas fa-check"></i> Saha ekibi için özel modüller</li>
+                                    <li><i class="fas fa-check"></i> Offline çalışma desteği</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image">
+                                <img src="assets/images/mobile-mockup.png" alt="Mobil Uygulama" class="feature-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="chatbot">
+                        <div class="tab-panel-content">
+                            <div class="tab-text">
+                                <h3>Aktif Chatbot Desteği</h3>
+                                <p>7/24 anlık destek alın! Yapay zeka destekli chatbot'umuz, muhasebe sorularınızı anında yanıtlar. Karmaşık hesaplamalar, vergi düzenlemeleri ve uygulama kullanımı konularında profesyonel yardım.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> 7/24 anlık destek</li>
+                                    <li><i class="fas fa-check"></i> Muhasebe uzmanı chatbot</li>
+                                    <li><i class="fas fa-check"></i> Türkçe doğal dil işleme</li>
+                                    <li><i class="fas fa-check"></i> Vergi ve mevzuat bilgisi</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image">
+                                <img src="assets/images/chatbot-feature.png" alt="Chatbot Özelliği" class="feature-img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-panel" id="integration">
+                        <div class="tab-panel-content">
+                            <div class="tab-text">
+                                <h3>Kolay Entegrasyon</h3>
+                                <p>Mevcut proje yönetim ve tasarım (BIM) yazılımlarınızla tam uyum. Esnek API altyapımız sayesinde veri kopukluklarına son verin.</p>
+                                <ul class="feature-list">
+                                    <li><i class="fas fa-check"></i> BIM yazılımları entegrasyonu</li>
+                                    <li><i class="fas fa-check"></i> E-Fatura entegrasyonu</li>
+                                    <li><i class="fas fa-check"></i> API tabanlı veri alışverişi</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image">
+                                <img src="assets/images/entegre.png" alt="Entegrasyon Diyagramı" class="feature-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Screenshots Section -->
+    <section class="screenshots-section" id="screenshots">
+        <div class="container">
+            <h2 class="section-title">Uygulamadan Ekran Görüntüleri</h2>
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <img src="assets/images/dashboard-screenshot.png" alt="Ana Panel" class="screenshot-img">
+                    <h3>Ana Panel</h3>
+                    <p>Genel bakış ve KPI'lar</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/hakedis-screenshot.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <h3>Kasa-Banka Yönetimi</h3>
+                    <p>Detaylı gelir-gider tablosu</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/puantaj-screenshot.png" alt="Personel Puantaj" class="screenshot-img">
+                    <h3>Personel Puantaj</h3>
+                    <p>Renkli ve anlaşılır puantaj tablosu</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/reports-screenshot.png" alt="Raporlama" class="screenshot-img">
+                    <h3>Raporlama</h3>
+                    <p>Grafiklerin olduğu bir rapor ekranı</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/e-fatura.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <h3>E-Fatura Yönetimi</h3>
+                    <p>Detaylı e-fatura tablosu</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/ilerleme.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <h3>Şantiye İlerleme</h3>
+                    <p>Detaylı şantiye ilerleme tablosu</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/evrak.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <h3>Evrak Yönetimi</h3>
+                    <p>Detaylı evrak tablosu</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/maas.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <h3>Maaş & Bordro Yönetimi</h3>
+                    <p>Detaylı maaş ve bordro tablosu</p>
+                </div>
+                <div class="screenshot-card">
+                    <img src="assets/images/tedarikci.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <h3>Tedarikçi Yönetimi</h3>
+                    <p>Detaylı tedarikçi tablosu</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="security-section" id="security">
+        <div class="container">
+            <h2 class="section-title">Verileriniz Bizimle Güvende</h2>
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Güçlü Teknoloji</h3>
+                    <p>Modern ve performanslı teknolojilerle geliştirilmiş, sürekli güncellenen altyapı.</p>
+                   
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Bulut Altyapısı</h3>
+                    <p>Güvenli bulut altyapısı ile verilerinize her yerden güvenle erişin. Kesintisiz ve ölçeklenebilir sistem.</p>
+                   
+                </div>
+                <div class="security-card">
+                    <div class="security-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>Veri Güvenliği</h3>
+                    <p>Tüm iletişim güvenli şifreleme ile korunur. Parolalarınız güvenli yöntemlerle korunur. Veri sızıntılarına karşı en üst düzey önlemler alınmıştır.</p>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section class="solutions-section" id="solutions">
+        <div class="container">
+            <h2 class="section-title">İşletmenize Özel Çözümler</h2>
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>KOBİ Çözümleri</h3>
+                    <p>Küçük ve orta ölçekli işletmeler için özel olarak tasarlanmış muhasebe çözümleri. Basit kullanım, güçlü özellikler.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Temel muhasebe modülleri</li>
+                        <li><i class="fas fa-check"></i> Standart raporlar</li>
+                        <li><i class="fas fa-check"></i> Temel chatbot desteği</li>
+                        <li><i class="fas fa-check"></i> E-posta desteği</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-outline">Detayları İncele</a>
+                </div>
+                <div class="solution-card featured">
+                    <div class="popular-badge">En Popüler</div>
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Profesyonel Çözümler</h3>
+                    <p>Büyüyen firmalar için gelişmiş özellikler. AI destekli otomasyon ve kapsamlı raporlama ile işinizi büyütün.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Tüm muhasebe modülleri</li>
+                        <li><i class="fas fa-check"></i> AI destekli OCR</li>
+                        <li><i class="fas fa-check"></i> Gelişmiş raporlama</li>
+                        <li><i class="fas fa-check"></i> Mobil uygulama</li>
+                        <li><i class="fas fa-check"></i> Gelişmiş AI chatbot</li>
+                        <li><i class="fas fa-check"></i> Öncelikli destek</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-primary">Ücretsiz Deneyin</a>
+                </div>
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3>Kurumsal Çözümler</h3>
+                    <p>Büyük ölçekli projeler için özel entegrasyonlar ve API erişimi. Özel chatbot ve SLA garantisi ile tam destek.</p>
+                    <ul class="solution-features">
+                        <li><i class="fas fa-check"></i> Sınırsız kullanıcı</li>
+                        <li><i class="fas fa-check"></i> Tüm özellikler</li>
+                        <li><i class="fas fa-check"></i> Özel entegrasyonlar</li>
+                        <li><i class="fas fa-check"></i> API erişimi</li>
+                        <li><i class="fas fa-check"></i> Özel AI chatbot</li>
+                        <li><i class="fas fa-check"></i> Özel destek</li>
+                        <li><i class="fas fa-check"></i> SLA garantisi</li>
+                    </ul>
+                    <a href="#contact-form" class="btn btn-outline">İletişime Geç</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <h2 class="section-title">Aklınızdaki Sorular</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Yapay zeka özellikleri nasıl çalışıyor?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>OCR ile fatura okuma ve tahmine dayalı maliyet analizi gibi özelliklerle işlerinizi otomatikleştirir. Makine öğrenmesi algoritmaları sayesinde sürekli gelişen bir sistem sunar.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Mevcut muhasebe programımdan veri aktarabilir miyim?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, esnek entegrasyon altyapımız sayesinde veri aktarımı mümkündür. CSV, Excel ve API formatlarında veri alışverişi yapabilirsiniz.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>E-Fatura entegrasyonu var mı?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Evet, yerel mevzuata tam uyumlu e-Fatura ve e-Defter entegrasyonlarımız mevcuttur. GİB ile tam entegrasyon sağlanmıştır.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Verilerimin güvenliği nasıl sağlanıyor?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Güvenli bulut altyapısı, SSL şifreleme ve düzenli yedeklemelerle verileriniz en üst düzeyde korunur. Veri merkezlerimiz ISO 27001 sertifikalıdır.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section" id="contact-form">
+        <div class="container">
+            <div class="form-container">
+                <div class="form-content">
+                    <h2>Yeni nesil inşaat muhasebenizi Harçla birleştirin.</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ad Soyad / Unvan</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">e-Posta</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Cep Telefonu</label>
+                            <div class="phone-input">
+                                <select id="countryCode" name="countryCode">
+                                    <option value="+90">+90</option>
+                                    <option value="+1">+1</option>
+                                    <option value="+44">+44</option>
+                                </select>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="activity">Faaliyet Alanınız</label>
+                            <select id="activity" name="activity" required>
+                                <option value="">Seçiniz</option>
+                                <option value="insaat">İnşaat</option>
+                                <option value="mimarlik">Mimarlık</option>
+                                <option value="muhendislik">Mühendislik</option>
+                                <option value="danismanlik">Danışmanlık</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="city">Şehir Seçiniz</label>
+                            <select id="city" name="city" required>
+                                <option value="">Seçiniz</option>
+                                <option value="istanbul">İstanbul</option>
+                                <option value="ankara">Ankara</option>
+                                <option value="izmir">İzmir</option>
+                                <option value="bursa">Bursa</option>
+                                <option value="antalya">Antalya</option>
+                                <option value="diger">Diğer</option>
+                            </select>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent1" name="consent1" required>
+                                <span class="checkmark"></span>
+                                Aydınlatma Metnini uyarınca, kişisel verilerimin aktarılmasına Açık Rıza Metni kapsamında açık rıza veriyorum.
+                            </label>
+                        </div>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent2" name="consent2" required>
+                                <span class="checkmark"></span>
+                                Aydınlatma Metni kapsamında, tarafıma HARÇ YAZILIM tarafından ticari elektronik ileti gönderilmesini, Açık Rıza Metni kapsamında onay/açık rıza veriyorum.
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large form-submit">Gönder</button>
+                    </form>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/harc-beyaz.png" alt="Harç" class="footer-logo-img">
+                    </div>
+                    <p class="footer-description">İnşaat sektörü için özel geliştirilmiş, yapay zeka destekli muhasebe çözümü.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>İletişim</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
+                        <p><i class="fas fa-envelope"></i> info@harcmuhasebe.com.tr</p>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="kullanim-kosullari.html" class="footer-link">Kullanım Koşulları</a>
+                    <a href="gizlilik-politikasi.html" class="footer-link">Gizlilik Politikası</a>
+                </div>
+                <p class="copyright">© 2025 HARÇ YAZILIM. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="video-container">
+                <video id="demoVideo" controls>
+                    <source src="assets/videos/IMG_1736.MOV" type="video/mp4">
+                    <source src="assets/videos/demo-video.webm" type="video/webm">
+                    Tarayıcınız video oynatmayı desteklemiyor.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/mail.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
