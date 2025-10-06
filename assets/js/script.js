@@ -488,19 +488,65 @@ function initVideoModal() {
     const modalClose = document.getElementById('modalClose');
     const modalOverlay = document.getElementById('modalOverlay');
     const demoVideo = document.getElementById('demoVideo');
+    const demoIframe = document.getElementById('demoIframe');
+
+    // Normalize any YouTube URL (youtu.be / watch?v=) to embeddable form
+    const getYouTubeEmbedUrl = (url) => {
+        if (!url) return '';
+        try {
+            // youtu.be/<id>
+            const shortIdx = url.indexOf('youtu.be/');
+            if (shortIdx !== -1) {
+                const id = url.substring(shortIdx + 'youtu.be/'.length).split(/[?&#]/)[0];
+                return id ? `https://www.youtube.com/embed/${id}` : url;
+            }
+            // youtube.com/watch?v=<id>
+            const watchIdx = url.indexOf('/watch');
+            if (watchIdx !== -1) {
+                const query = url.split('?')[1] || '';
+                const params = new URLSearchParams(query);
+                const id = params.get('v');
+                return id ? `https://www.youtube.com/embed/${id}` : url;
+            }
+            // Already embed or something else
+            return url;
+        } catch {
+            return url;
+        }
+    };
+
+    // Determine and enforce base src
+    let iframeBaseSrc = '';
+    if (demoIframe) {
+        iframeBaseSrc = getYouTubeEmbedUrl(demoIframe.getAttribute('src'));
+        if (iframeBaseSrc !== demoIframe.getAttribute('src')) {
+            demoIframe.setAttribute('src', iframeBaseSrc);
+        }
+    }
 
     if (demoBtn && videoModal) {
         // Open modal
         demoBtn.addEventListener('click', () => {
             videoModal.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            // Autoplay YouTube iframe if present
+            if (demoIframe && iframeBaseSrc) {
+                const separator = iframeBaseSrc.includes('?') ? '&' : '?';
+                demoIframe.src = `${iframeBaseSrc}${separator}autoplay=1`;
+            }
         });
 
         // Close modal functions
         const closeModal = () => {
             videoModal.classList.remove('active');
             document.body.style.overflow = 'auto'; // Restore scrolling
-            demoVideo.pause(); // Pause video when modal closes
+            if (demoVideo) {
+                demoVideo.pause(); // Pause local video if present
+            }
+            if (demoIframe && iframeBaseSrc) {
+                // Reset iframe src to stop playback
+                demoIframe.src = iframeBaseSrc;
+            }
         };
 
         // Close on X button
@@ -548,23 +594,9 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Add loading animation
-window.addEventListener('load', () => {
-    document.body.classList.add('loaded');
-});
-
 // Add CSS for loading animation
 const style = document.createElement('style');
 style.textContent = `
-    body {
-        opacity: 0;
-        transition: opacity 0.5s ease;
-    }
-    
-    body.loaded {
-        opacity: 1;
-    }
-    
     .back-to-top:hover {
         background-color: var(--primary-dark);
         transform: translateY(-2px);
