@@ -515,13 +515,11 @@ function initVideoModal() {
         }
     };
 
-    // Determine and enforce base src
+    // Determine and enforce base src (support lazy loading with data-src)
     let iframeBaseSrc = '';
     if (demoIframe) {
-        iframeBaseSrc = getYouTubeEmbedUrl(demoIframe.getAttribute('src'));
-        if (iframeBaseSrc !== demoIframe.getAttribute('src')) {
-            demoIframe.setAttribute('src', iframeBaseSrc);
-        }
+        const srcAttr = demoIframe.getAttribute('data-src') || demoIframe.getAttribute('src');
+        iframeBaseSrc = getYouTubeEmbedUrl(srcAttr);
     }
 
     if (demoBtn && videoModal) {

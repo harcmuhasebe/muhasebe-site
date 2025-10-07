@@ -63,7 +63,7 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts with font-display swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- EmailJS -->
@@ -217,7 +217,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/images/dashboard-mockup.png" alt="Harç İnşaat Muhasebe Yazılımı - Ana Dashboard Ekranı - OCR Fatura Okuma ve Hakediş Takibi" class="hero-mockup" width="800" height="600" loading="eager">
+                <img src="assets/images/dashboard-mockup.png" alt="Harç İnşaat Muhasebe Yazılımı - Ana Dashboard Ekranı - OCR Fatura Okuma ve Hakediş Takibi" class="hero-mockup" width="800" height="600" loading="eager" fetchpriority="high">
             </div>
         </div>
     </section>
@@ -565,7 +565,7 @@
                         <div class="form-group">
                             <label for="phone">Cep Telefonu</label>
                             <div class="phone-input">
-                                <select id="countryCode" name="countryCode">
+                                <select id="countryCode" name="countryCode" aria-label="Ülke Kodu Seçiniz">
                                     <option value="+90">+90</option>
                                     <option value="+1">+1</option>
                                     <option value="+44">+44</option>
@@ -653,7 +653,7 @@
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
             <div class="video-container">
-                <iframe id="demoIframe" src="https://youtu.be/VoXJJotmkEI" title="Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe id="demoIframe" src="" data-src="https://youtu.be/VoXJJotmkEI" title="Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
             </div>
         </div>
     </div>
