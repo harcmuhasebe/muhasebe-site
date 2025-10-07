@@ -38,3 +38,12 @@ yarn-error.log*
 # Optional: node_modules if you add npm later
 node_modules/
 
+# Environment variables and secrets
+.env
+.env.local
+.env.production
+.env.development
+
+# Analytics secrets (contains API keys)
+ANALYTICS_BILGILERI.md
+
