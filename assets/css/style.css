@@ -980,7 +980,7 @@ p {
 }
 
 .footer-link {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.95);
     text-decoration: none;
     transition: var(--transition);
 }
@@ -990,7 +990,7 @@ p {
 }
 
 .copyright {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.9);
     margin: 0;
 }
 
