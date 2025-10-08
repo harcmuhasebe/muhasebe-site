@@ -57,17 +57,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Critical CSS (Inline for mobile performance) -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;overflow-x:hidden;background:#fff}
+        .navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.05);z-index:1000;transition:all .3s}
+        .navbar-container{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{height:40px;transition:transform .3s}.logo:hover{transform:scale(1.05)}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 2rem;background:linear-gradient(135deg,#f0fdf4 0%,#fff 100%)}
+        .hero-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .hero-title{font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#047857;line-height:1.2;margin-bottom:1.5rem}
+        .btn{padding:.75rem 1.5rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:all .3s}
+        .btn-primary{background:#059669;color:#fff}
+        @media(max-width:768px){.hero-container{grid-template-columns:1fr;gap:2rem}.navbar-container{padding:1rem}}
+    </style>
     
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Stylesheets (Preload non-critical CSS) -->
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
     
-    <!-- Google Fonts with font-display swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons (Load async for mobile) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Google Fonts with font-display swap (Preload for mobile) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- EmailJS (Deferred for mobile performance) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5FCMTMBY"></script>
@@ -290,7 +307,10 @@
                                 </ul>
                             </div>
                             <div class="tab-image">
-                                <img src="assets/images/ocr-feature.png" alt="Yapay Zeka OCR Özelliği - Otomatik Fatura Okuma ve İşleme" class="feature-img" width="600" height="450" loading="lazy">
+                                <picture>
+                                    <source media="(max-width: 768px)" srcset="assets/images/ocr-feature-mobile.webp" type="image/webp">
+                                    <img src="assets/images/ocr-feature.png" alt="Yapay Zeka OCR Özelliği - Otomatik Fatura Okuma ve İşleme" class="feature-img" width="600" height="450" loading="lazy">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -306,7 +326,10 @@
                                 </ul>
                             </div>
                             <div class="tab-image">
-                                <img src="assets/images/report-feature.png" alt="Akıllı Raporlama ve Analiz Sistemi - Tahmine Dayalı Maliyet Analizi" class="feature-img" width="600" height="450" loading="lazy">
+                                <picture>
+                                    <source media="(max-width: 768px)" srcset="assets/images/report-feature-mobile.webp" type="image/webp">
+                                    <img src="assets/images/report-feature.png" alt="Akıllı Raporlama ve Analiz Sistemi - Tahmine Dayalı Maliyet Analizi" class="feature-img" width="600" height="450" loading="lazy">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -339,7 +362,10 @@
                                 </ul>
                             </div>
                             <div class="tab-image">
-                                <img src="assets/images/chatbot-feature.png" alt="7/24 AI Chatbot Desteği - Muhasebe Uzmanı Yapay Zeka Asistanı" class="feature-img" width="600" height="450" loading="lazy">
+                                <picture>
+                                    <source media="(max-width: 768px)" srcset="assets/images/chatbot-feature-mobile.webp" type="image/webp">
+                                    <img src="assets/images/chatbot-feature.png" alt="7/24 AI Chatbot Desteği - Muhasebe Uzmanı Yapay Zeka Asistanı" class="feature-img" width="600" height="450" loading="lazy">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -370,7 +396,10 @@
             <h2 class="section-title">Uygulamadan Ekran Görüntüleri</h2>
             <div class="screenshots-grid">
                 <div class="screenshot-card">
-                    <img src="assets/images/dashboard-screenshot.png" alt="Harç Ana Panel Dashboard - İnşaat Projeleri Genel Bakış ve KPI Takibi" class="screenshot-img" width="400" height="300" loading="lazy">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/dashboard-screenshot-mobile.webp" type="image/webp">
+                        <img src="assets/images/dashboard-screenshot.png" alt="Harç Ana Panel Dashboard - İnşaat Projeleri Genel Bakış ve KPI Takibi" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Ana Panel</h3>
                     <p>Genel bakış ve KPI'lar</p>
                 </div>
@@ -667,7 +696,7 @@
         </div>
     </div>
 
-    <script src="assets/js/mail.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/mail.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
 </body>
 </html>
