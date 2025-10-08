@@ -567,7 +567,7 @@ function initVideoModal() {
 }
 
 // Initialize all functions when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
+function initializeApp() {
     initSmoothScroll();
     initNavbarScroll();
     initMobileMenu();
@@ -581,7 +581,15 @@ document.addEventListener('DOMContentLoaded', () => {
     initBackToTop();
     initVideoModal();
     // initTypingAnimation(); // Uncomment if you want typing animation
-});
+}
+
+// Handle both defer and normal script loading
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+    // DOM already loaded (defer scripts)
+    initializeApp();
+}
 
 // Handle window resize
 window.addEventListener('resize', () => {
