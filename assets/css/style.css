@@ -1591,7 +1591,7 @@ p {
     height: 50px;
     background-color: var(--primary-color);
     color: white;
-    border: 3px solid #000000;
+    border: 3px solid #ffffff;
     border-radius: 50%;
     cursor: pointer;
     opacity: 0;
@@ -1608,7 +1608,6 @@ p {
 .back-to-top:hover {
     background-color: white;
     color: var(--primary-color);
-    border-color: #000000;
     transform: translateY(-2px);
 }
 
@@ -1637,20 +1636,133 @@ p {
 /* Mobile responsive adjustments for back-to-top */
 @media (max-width: 768px) {
     .back-to-top {
-        right: 15px;
-        bottom: 85px;
-        width: 45px;
-        height: 45px;
-        font-size: 1rem;
+        display: none !important;
     }
 }
 
 @media (max-width: 480px) {
     .back-to-top {
-        right: 10px;
-        bottom: 75px;
-        width: 42px;
-        height: 42px;
-        font-size: 0.9rem;
+        display: none !important;
+    }
+}
+
+/* Chatbot Mobile Full Screen Styles - Override inline styles */
+@media (max-width: 768px) {
+    #chatbotContainer,
+    .chatbot-container {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+        z-index: 10000 !important;
+        transform: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    
+    .chatbot-header {
+        border-radius: 0 !important;
+        padding: 15px 20px !important;
+        margin: 0 !important;
+    }
+    
+    .chatbot-messages {
+        height: calc(100vh - 140px) !important;
+        max-height: calc(100vh - 140px) !important;
+        padding: 20px !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    
+    .chatbot-input-container {
+        border-radius: 0 !important;
+        padding: 15px 20px !important;
+        margin: 0 !important;
+    }
+    
+    .chatbot-toggle {
+        position: fixed !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        z-index: 10001 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #chatbotContainer,
+    .chatbot-container {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+        z-index: 10000 !important;
+        transform: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    
+    .chatbot-header {
+        border-radius: 0 !important;
+        padding: 12px 15px !important;
+        margin: 0 !important;
+    }
+    
+    .chatbot-messages {
+        height: calc(100vh - 120px) !important;
+        max-height: calc(100vh - 120px) !important;
+        padding: 15px !important;
+        margin: 0 !important;
+        border-radius: 0 !important;
+    }
+    
+    .chatbot-input-container {
+        border-radius: 0 !important;
+        padding: 12px 15px !important;
+        margin: 0 !important;
+    }
+    
+    .chatbot-toggle {
+        position: fixed !important;
+        bottom: 15px !important;
+        right: 15px !important;
+        z-index: 10001 !important;
+    }
+}
+
+/* Ultra Strong Mobile Chatbot Override - Must be last */
+@media screen and (max-width: 768px) {
+    body.chatbot-open #chatbotContainer,
+    body.chatbot-open .chatbot-container,
+    #chatbotContainer.chatbot-open,
+    .chatbot-container.chatbot-open {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: 100vw !important;
+        max-height: 100vh !important;
+        border-radius: 0 !important;
+        z-index: 99999 !important;
+        transform: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+        background: white !important;
     }
 }

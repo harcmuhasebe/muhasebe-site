@@ -562,7 +562,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     height: 60px;
                     border-radius: 50%;
                     background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
-                    border: 3px solid #000000;
+                    border: 3px solid #ffffff;
                     color: white;
                     font-size: 1.5rem;
                     cursor: pointer;
@@ -576,7 +576,6 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                 .chatbot-toggle:hover {
                     background: white;
                     color: #2E7D32;
-                    border-color: #000000;
                     transform: translateY(-2px);
                     box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
                 }
@@ -883,14 +882,16 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     }
 
                     .chatbot-window {
-                        position: fixed;
-                        bottom: 85px;
-                        right: 15px;
-                        left: 15px;
-                        width: calc(100vw - 30px);
-                        height: calc(100vh - 150px);
-                        max-height: 500px;
-                        border-radius: 16px;
+                        position: fixed !important;
+                        top: 0 !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        bottom: 0 !important;
+                        width: 100vw !important;
+                        height: 100vh !important;
+                        max-height: 100vh !important;
+                        border-radius: 0 !important;
+                        z-index: 99999 !important;
                     }
 
                     .chatbot-header {
@@ -943,12 +944,16 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
                 @media (max-width: 480px) {
                     .chatbot-window {
-                        width: calc(100vw - 20px);
-                        height: calc(100vh - 130px);
-                        right: 10px;
-                        left: 10px;
-                        bottom: 75px;
-                        border-radius: 12px;
+                        position: fixed !important;
+                        top: 0 !important;
+                        left: 0 !important;
+                        right: 0 !important;
+                        bottom: 0 !important;
+                        width: 100vw !important;
+                        height: 100vh !important;
+                        max-height: 100vh !important;
+                        border-radius: 0 !important;
+                        z-index: 99999 !important;
                     }
 
                     .chatbot-toggle {
