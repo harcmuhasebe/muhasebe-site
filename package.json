@@ -1,0 +1,14 @@
+{
+  "name": "muhasebe-site",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Harç - İnşaat Muhasebe Yazılımı",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "keywords": ["muhasebe", "inşaat", "chatbot"],
+  "author": "HARÇ YAZILIM",
+  "license": "MIT"
+}
+
