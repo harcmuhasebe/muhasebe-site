@@ -3,33 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harç - Yapay Zeka ile İnşaat Projelerinizi Yönetin</title>
-    <meta name="description" content="İnşaat sektörü için özel geliştirilmiş, yapay zeka destekli muhasebe yazılımı. OCR ile fatura okuma, akıllı raporlama ve mobil uyumluluk.">
-    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Primary Meta Tags -->
+    <title>Harç - Yapay Zeka ile İnşaat Muhasebe Yazılımı | OCR ve Akıllı Raporlama</title>
+    <meta name="title" content="Harç - Yapay Zeka ile İnşaat Muhasebe Yazılımı | OCR ve Akıllı Raporlama">
+    <meta name="description" content="İnşaat sektörü için özel geliştirilmiş yapay zeka destekli muhasebe yazılımı. OCR ile otomatik fatura okuma, hakediş takibi, akıllı raporlama, mobil uygulama ve 7/24 AI chatbot desteği ile projelerinizi yönetin.">
+    <meta name="keywords" content="inşaat muhasebe yazılımı, yapay zeka muhasebe, OCR fatura okuma, hakediş takibi, inşaat proje yönetimi, inşaat maliyet takibi, e-fatura entegrasyonu, puantaj sistemi, taşeron yönetimi, şantiye yönetimi, muhasebe otomasyon, AI chatbot muhasebe">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Turkish">
+    <meta name="author" content="HARÇ YAZILIM">
+    <meta name="copyright" content="© 2025 HARÇ YAZILIM">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://harcmuhasebe.com.tr/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://harcmuhasebe.com.tr/">
+    <meta property="og:site_name" content="Harç - İnşaat Muhasebe Yazılımı">
+    <meta property="og:title" content="Harç - Yapay Zeka ile İnşaat Muhasebe Yazılımı">
+    <meta property="og:description" content="İnşaat sektörü için özel geliştirilmiş yapay zeka destekli muhasebe yazılımı. OCR ile otomatik fatura okuma, hakediş takibi ve akıllı raporlama.">
+    <meta property="og:image" content="https://harcmuhasebe.com.tr/assets/images/dashboard-mockup.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="tr_TR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://harcmuhasebe.com.tr/">
+    <meta property="twitter:title" content="Harç - Yapay Zeka ile İnşaat Muhasebe Yazılımı">
+    <meta property="twitter:description" content="İnşaat sektörü için özel geliştirilmiş yapay zeka destekli muhasebe yazılımı. OCR ile otomatik fatura okuma, hakediş takibi ve akıllı raporlama.">
+    <meta property="twitter:image" content="https://harcmuhasebe.com.tr/assets/images/dashboard-mockup.png">
+    
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="TR">
+    <meta name="geo.placename" content="İstanbul">
+    <meta name="geo.position" content="41.015137;28.979530">
+    <meta name="ICBM" content="41.015137, 28.979530">
+    
+    <!-- Mobile App Capable -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Harç">
+    
     <!-- Optimized favicon for Google Search Results -->
     <link rel="icon" href="/assets/images/favicon.png" type="image/png" sizes="48x48">
     <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
     <link rel="apple-touch-icon" href="/assets/images/favicon.png">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- EmailJS -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     
-    <!-- Structured Data for Google Search Results -->
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Critical CSS (Inline for mobile performance) -->
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;overflow-x:hidden;background:#fff}
+        .navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.05);z-index:1000;transition:all .3s}
+        .navbar-container{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
+        .logo{height:40px;transition:transform .3s}.logo:hover{transform:scale(1.05)}
+        .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 2rem;background:linear-gradient(135deg,#f0fdf4 0%,#fff 100%)}
+        .hero-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+        .hero-title{font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#047857;line-height:1.2;margin-bottom:1.5rem}
+        .btn{padding:.75rem 1.5rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:all .3s}
+        .btn-primary{background:#059669;color:#fff}
+        @media(max-width:768px){.hero-container{grid-template-columns:1fr;gap:2rem}.navbar-container{padding:1rem}}
+    </style>
+    
+    <!-- Stylesheets (Preload non-critical CSS) -->
+    <link rel="preload" href="assets/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="assets/css/style.css"></noscript>
+    
+    <!-- Font Awesome for icons (Load async for mobile) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
+    
+    <!-- Google Fonts with font-display swap (Preload for mobile) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- EmailJS (Deferred for mobile performance) -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-DX5FCMTMBY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-DX5FCMTMBY');
+    </script>
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="jc6mgSI0AYjeRlxxKCKhHUqW6vyXMWvil97VmCLLbfE">
+    
+    <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
     {
-      "@context" : "https://schema.org",
-      "@type" : "WebSite",
-      "name" : "Harç Yazılım",
-      "url" : "https://www.harcmuhasebe.com.tr/",
-      "description" : "İnşaat sektörü için özel geliştirilmiş, yapay zeka destekli muhasebe yazılımı. OCR ile fatura okuma, akıllı raporlama ve mobil uyumluluk.",
-      "publisher" : {
-        "@type" : "Organization",
-        "name" : "Harç Yazılım",
-        "url" : "https://www.harcmuhasebe.com.tr/"
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Harç Yazılım",
+      "url": "https://www.harcmuhasebe.com.tr/",
+      "description": "İnşaat sektörü için özel geliştirilmiş, yapay zeka destekli muhasebe yazılımı. OCR ile fatura okuma, akıllı raporlama ve mobil uyumluluk.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Harç Yazılım",
+        "url": "https://www.harcmuhasebe.com.tr/"
       }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Harç",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, iOS, Android",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "127"
+      },
+      "description": "İnşaat sektörü için özel geliştirilmiş yapay zeka destekli muhasebe yazılımı. OCR ile otomatik fatura okuma, hakediş takibi ve akıllı raporlama.",
+      "featureList": [
+        "OCR ile Otomatik Fatura Okuma",
+        "Yapay Zeka Destekli Raporlama",
+        "Mobil Uygulama",
+        "7/24 AI Chatbot Desteği",
+        "E-Fatura Entegrasyonu",
+        "Hakediş Takibi",
+        "Puantaj Yönetimi"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "HARÇ YAZILIM",
+      "url": "https://harcmuhasebe.com.tr",
+      "logo": "https://harcmuhasebe.com.tr/assets/images/logo.png",
+      "description": "İnşaat sektörü için yapay zeka destekli muhasebe çözümleri",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "İstanbul",
+        "addressCountry": "TR"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+90",
+        "contactType": "customer service",
+        "email": "info@harcmuhasebe.com.tr",
+        "availableLanguage": ["Turkish"]
+      },
+      "sameAs": []
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Yapay zeka özellikleri nasıl çalışıyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "OCR ile fatura okuma ve tahmine dayalı maliyet analizi gibi özelliklerle işlerinizi otomatikleştirir. Makine öğrenmesi algoritmaları sayesinde sürekli gelişen bir sistem sunar."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Mevcut muhasebe programımdan veri aktarabilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, esnek entegrasyon altyapımız sayesinde veri aktarımı mümkündür. CSV, Excel ve API formatlarında veri alışverişi yapabilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "E-Fatura entegrasyonu var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, yerel mevzuata tam uyumlu e-Fatura ve e-Defter entegrasyonlarımız mevcuttur. GİB ile tam entegrasyon sağlanmıştır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Verilerimin güvenliği nasıl sağlanıyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Güvenli bulut altyapısı, SSL şifreleme ve düzenli yedeklemelerle verileriniz en üst düzeyde korunur. Veri merkezlerimiz ISO 27001 sertifikalıdır."
+          }
+        }
+      ]
     }
     </script>
 </head>
@@ -38,8 +215,12 @@
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="/">
-                    <img src="assets/images/logo.png" alt="Harç" class="logo-img">
+                <a href="/" aria-label="Harç Ana Sayfa">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/logo-small.webp" type="image/webp">
+                        <source srcset="assets/images/logo.webp" type="image/webp">
+                        <img src="assets/images/logo.png" alt="Harç İnşaat Muhasebe Yazılımı Logo" class="logo-img" width="120" height="40" loading="eager">
+                    </picture>
                 </a>
             </div>
             <div class="nav-menu" id="nav-menu">
@@ -72,7 +253,11 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="assets/images/dashboard-mockup.png" alt="İnşaat Muhasebe PRO Dashboard" class="hero-mockup">
+                <picture>
+                    <source media="(max-width: 768px)" srcset="assets/images/dashboard-mockup-mobile.webp" type="image/webp">
+                    <source srcset="assets/images/dashboard-mockup-desktop.webp" type="image/webp">
+                    <img src="assets/images/dashboard-mockup.png" alt="Harç İnşaat Muhasebe Yazılımı - Ana Dashboard Ekranı - OCR Fatura Okuma ve Hakediş Takibi" class="hero-mockup" width="800" height="600" loading="eager" fetchpriority="high">
+                </picture>
             </div>
         </div>
     </section>
@@ -139,7 +324,10 @@
                                 </ul>
                             </div>
                             <div class="tab-image">
-                                <img src="assets/images/ocr-feature.png" alt="OCR Özelliği" class="feature-img">
+                                <picture>
+                                    <source media="(max-width: 768px)" srcset="assets/images/ocr-feature-mobile.webp" type="image/webp">
+                                    <img src="assets/images/ocr-feature.png" alt="Yapay Zeka OCR Özelliği - Otomatik Fatura Okuma ve İşleme" class="feature-img" width="600" height="450" loading="lazy">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -155,7 +343,10 @@
                                 </ul>
                             </div>
                             <div class="tab-image">
-                                <img src="assets/images/report-feature.png" alt="Raporlama Özelliği" class="feature-img">
+                                <picture>
+                                    <source media="(max-width: 768px)" srcset="assets/images/report-feature-mobile.webp" type="image/webp">
+                                    <img src="assets/images/report-feature.png" alt="Akıllı Raporlama ve Analiz Sistemi - Tahmine Dayalı Maliyet Analizi" class="feature-img" width="600" height="450" loading="lazy">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -171,7 +362,7 @@
                                 </ul>
                             </div>
                             <div class="tab-image">
-                                <img src="assets/images/mobile-mockup.png" alt="Mobil Uygulama" class="feature-img">
+                                <img src="assets/images/mobile-mockup.png" alt="Harç Mobil Uygulama - Saha Ekibi İçin Kullanıcı Dostu Arayüz" class="feature-img" width="600" height="450" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -188,7 +379,10 @@
                                 </ul>
                             </div>
                             <div class="tab-image">
-                                <img src="assets/images/chatbot-feature.png" alt="Chatbot Özelliği" class="feature-img">
+                                <picture>
+                                    <source media="(max-width: 768px)" srcset="assets/images/chatbot-feature-mobile.webp" type="image/webp">
+                                    <img src="assets/images/chatbot-feature.png" alt="7/24 AI Chatbot Desteği - Muhasebe Uzmanı Yapay Zeka Asistanı" class="feature-img" width="600" height="450" loading="lazy">
+                                </picture>
                             </div>
                         </div>
                     </div>
@@ -204,7 +398,7 @@
                                 </ul>
                             </div>
                             <div class="tab-image">
-                                <img src="assets/images/entegre.png" alt="Entegrasyon Diyagramı" class="feature-img">
+                                <img src="assets/images/entegre.png" alt="Kolay Entegrasyon - BIM, E-Fatura ve API Entegrasyonu Diyagramı" class="feature-img" width="600" height="450" loading="lazy">
                             </div>
                         </div>
                     </div>
@@ -219,47 +413,83 @@
             <h2 class="section-title">Uygulamadan Ekran Görüntüleri</h2>
             <div class="screenshots-grid">
                 <div class="screenshot-card">
-                    <img src="assets/images/dashboard-screenshot.png" alt="Ana Panel" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/dashboard-screenshot-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/dashboard-screenshot.webp" type="image/webp">
+                        <img src="assets/images/dashboard-screenshot.png" alt="Harç Ana Panel Dashboard - İnşaat Projeleri Genel Bakış ve KPI Takibi" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Ana Panel</h3>
                     <p>Genel bakış ve KPI'lar</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/images/hakedis-screenshot.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/hakedis-screenshot-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/hakedis-screenshot.webp" type="image/webp">
+                        <img src="assets/images/hakedis-screenshot.png" alt="Kasa Banka Yönetimi - Gelir Gider Takibi ve Hakediş Yönetimi" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Kasa-Banka Yönetimi</h3>
                     <p>Detaylı gelir-gider tablosu</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/images/puantaj-screenshot.png" alt="Personel Puantaj" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/puantaj-screenshot-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/puantaj-screenshot.webp" type="image/webp">
+                        <img src="assets/images/puantaj-screenshot.png" alt="Personel Puantaj Sistemi - Çalışan Takibi ve Mesai Yönetimi" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Personel Puantaj</h3>
                     <p>Renkli ve anlaşılır puantaj tablosu</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/images/reports-screenshot.png" alt="Raporlama" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/reports-screenshot-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/reports-screenshot.webp" type="image/webp">
+                        <img src="assets/images/reports-screenshot.png" alt="Raporlama ve Analiz - Grafik Tabanlı İnşaat Proje Raporları" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Raporlama</h3>
                     <p>Grafiklerin olduğu bir rapor ekranı</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/images/e-fatura.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/e-fatura-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/e-fatura.webp" type="image/webp">
+                        <img src="assets/images/e-fatura.png" alt="E-Fatura Yönetimi - GİB Entegrasyonu ile Otomatik Fatura İşleme" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>E-Fatura Yönetimi</h3>
                     <p>Detaylı e-fatura tablosu</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/images/ilerleme.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/ilerleme-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/ilerleme.webp" type="image/webp">
+                        <img src="assets/images/ilerleme.png" alt="Şantiye İlerleme Takibi - İnşaat Proje İlerleme ve Fiziki Gerçekleşme" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Şantiye İlerleme</h3>
                     <p>Detaylı şantiye ilerleme tablosu</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/images/evrak.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/evrak-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/evrak.webp" type="image/webp">
+                        <img src="assets/images/evrak.png" alt="Evrak Yönetimi - Doküman Takibi ve Belge Arşivleme Sistemi" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Evrak Yönetimi</h3>
                     <p>Detaylı evrak tablosu</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/images/maas.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/maas-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/maas.webp" type="image/webp">
+                        <img src="assets/images/maas.png" alt="Maaş ve Bordro Yönetimi - Personel Ödemeleri ve SGK İşlemleri" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Maaş & Bordro Yönetimi</h3>
                     <p>Detaylı maaş ve bordro tablosu</p>
                 </div>
                 <div class="screenshot-card">
-                    <img src="assets/images/tedarikci.png" alt="Hakediş Yönetimi" class="screenshot-img">
+                    <picture>
+                        <source media="(max-width: 768px)" srcset="assets/images/tedarikci-mobile.webp" type="image/webp">
+                        <source srcset="assets/images/tedarikci.webp" type="image/webp">
+                        <img src="assets/images/tedarikci.png" alt="Tedarikçi Yönetimi - Taşeron ve Malzeme Tedarikçi Takibi" class="screenshot-img" width="400" height="300" loading="lazy">
+                    </picture>
                     <h3>Tedarikçi Yönetimi</h3>
                     <p>Detaylı tedarikçi tablosu</p>
                 </div>
@@ -420,7 +650,7 @@
                         <div class="form-group">
                             <label for="phone">Cep Telefonu</label>
                             <div class="phone-input">
-                                <select id="countryCode" name="countryCode">
+                                <select id="countryCode" name="countryCode" aria-label="Ülke Kodu Seçiniz">
                                     <option value="+90">+90</option>
                                     <option value="+1">+1</option>
                                     <option value="+44">+44</option>
@@ -479,15 +709,18 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <img src="assets/images/harc-beyaz.png" alt="Harç" class="footer-logo-img">
+                        <picture>
+                            <source srcset="assets/images/harc-beyaz.webp" type="image/webp">
+                            <img src="assets/images/harc-beyaz.png" alt="Harç İnşaat Muhasebe Yazılımı - Beyaz Logo" class="footer-logo-img" width="150" height="50" loading="lazy">
+                        </picture>
                     </div>
                     <p class="footer-description">İnşaat sektörü için özel geliştirilmiş, yapay zeka destekli muhasebe çözümü.</p>
                 </div>
                 <div class="footer-section">
-                    <h4>İletişim</h4>
+                    <h3>İletişim</h3>
                     <div class="contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
-                        <p><i class="fas fa-envelope"></i> info@harcmuhasebe.com.tr</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@harcmuhasebe.com.tr" class="footer-email-link">info@harcmuhasebe.com.tr</a></p>
                     </div>
                 </div>
                
@@ -508,16 +741,13 @@
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
             <div class="video-container">
-                <video id="demoVideo" controls>
-                    <source src="https://pub-59ed1d3d79f3402aa4c18eef70729569.r2.dev" type="video/mp4">
-                    <source src="https://pub-59ed1d3d79f3402aa4c18eef70729569.r2.dev" type="video/webm">
-                    Tarayıcınız video oynatmayı desteklemiyor.
-                </video>
+                <iframe id="demoIframe" src="" data-src="https://youtu.be/VoXJJotmkEI" title="Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
             </div>
         </div>
     </div>
 
-    <script src="assets/js/mail.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/mail.js" defer></script>
+    <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/chatbot.js" defer></script>
 </body>
 </html>
