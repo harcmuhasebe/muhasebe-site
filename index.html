@@ -6,14 +6,32 @@
     <title>Harç - Yapay Zeka ile İnşaat Projelerinizi Yönetin</title>
     <meta name="description" content="İnşaat sektörü için özel geliştirilmiş, yapay zeka destekli muhasebe yazılımı. OCR ile fatura okuma, akıllı raporlama ve mobil uyumluluk.">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Optimized favicon for Google Search Results -->
+    <link rel="icon" href="/assets/images/favicon.png" type="image/png" sizes="48x48">
+    <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/images/favicon.png">
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <!-- EmailJS -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <!-- Structured Data for Google Search Results -->
+    <script type="application/ld+json">
+    {
+      "@context" : "https://schema.org",
+      "@type" : "WebSite",
+      "name" : "Harç Yazılım",
+      "url" : "https://www.harcmuhasebe.com.tr/",
+      "description" : "İnşaat sektörü için özel geliştirilmiş, yapay zeka destekli muhasebe yazılımı. OCR ile fatura okuma, akıllı raporlama ve mobil uyumluluk.",
+      "publisher" : {
+        "@type" : "Organization",
+        "name" : "Harç Yazılım",
+        "url" : "https://www.harcmuhasebe.com.tr/"
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -490,7 +508,11 @@
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
             <div class="video-container">
-                <iframe id="demoIframe" src="https://youtu.be/VoXJJotmkEI" title="Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <video id="demoVideo" controls>
+                    <source src="https://pub-59ed1d3d79f3402aa4c18eef70729569.r2.dev" type="video/mp4">
+                    <source src="https://pub-59ed1d3d79f3402aa4c18eef70729569.r2.dev" type="video/webm">
+                    Tarayıcınız video oynatmayı desteklemiyor.
+                </video>
             </div>
         </div>
     </div>
