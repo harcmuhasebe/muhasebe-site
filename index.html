@@ -59,16 +59,37 @@
     
     <!-- Critical CSS (Inline for mobile performance) -->
     <style>
-        *{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;overflow-x:hidden;background:#fff}
+        *{margin:0;padding:0;box-sizing:border-box}
+        html{scroll-behavior:smooth}
+        body{font-family:Inter,sans-serif;overflow-x:hidden;background:#fff;line-height:1.6;color:#1F2937}
+        
+        /* Critical Layout Styles */
         .navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.05);z-index:1000;transition:all .3s}
         .navbar-container{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
         .logo{height:40px;transition:transform .3s}.logo:hover{transform:scale(1.05)}
+        
+        /* Hero Section Critical Styles */
         .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 2rem;background:linear-gradient(135deg,#f0fdf4 0%,#fff 100%)}
         .hero-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
         .hero-title{font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#047857;line-height:1.2;margin-bottom:1.5rem}
-        .btn{padding:.75rem 1.5rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:all .3s}
+        .hero-subtitle{font-size:1.125rem;color:#4B5563;margin-bottom:2rem;line-height:1.6}
+        
+        /* Button Critical Styles */
+        .btn{padding:.75rem 1.5rem;border:none;border-radius:8px;font-weight:600;cursor:pointer;transition:all .3s;text-decoration:none;display:inline-block;text-align:center}
         .btn-primary{background:#059669;color:#fff}
-        @media(max-width:768px){.hero-container{grid-template-columns:1fr;gap:2rem}.navbar-container{padding:1rem}}
+        .btn-secondary{background:transparent;color:#059669;border:2px solid #059669}
+        
+        /* Prevent FOUC */
+        .hero-content{opacity:0;animation:fadeInUp 0.6s ease-out 0.2s forwards}
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+        
+        /* Mobile Responsive */
+        @media(max-width:768px){
+            .hero-container{grid-template-columns:1fr;gap:2rem}
+            .navbar-container{padding:1rem}
+            .hero{padding:4rem 1rem 2rem}
+            .hero-title{font-size:2rem}
+        }
     </style>
     
     <!-- Stylesheets (Preload non-critical CSS) -->
@@ -746,6 +767,16 @@
         </div>
     </div>
 
+    <!-- Critical JavaScript - Load immediately -->
+    <script>
+        // Prevent FOUC by hiding content until CSS loads
+        document.documentElement.style.visibility = 'hidden';
+        window.addEventListener('load', function() {
+            document.documentElement.style.visibility = 'visible';
+        });
+    </script>
+    
+    <!-- Non-critical JavaScript - Load with defer -->
     <script src="assets/js/mail.js" defer></script>
     <script src="assets/js/script.js" defer></script>
     <script src="assets/js/chatbot.js" defer></script>
