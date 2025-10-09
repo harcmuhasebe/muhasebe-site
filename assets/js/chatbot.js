@@ -1,15 +1,8 @@
 
 class HarcChatbot {
     constructor() {
-        // API Configuration (embedded for deployment)
-        this.apiKey = 'AIzaSyC4u456eaBu0xHbeAswwJTL_gEGsPGqMfw';
-        this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent';
-        this.temperature = 0.4;
-        this.maxOutputTokens = 500;
-        this.topP = 0.95;
-        this.topK = 40;
-        this.thinkingBudget = 0;
-        this.candidateCount = 1;
+        // API Configuration - Using Vercel Serverless Function (secure)
+        this.apiEndpoint = '/api/chat'; // Vercel serverless function
         this.maxHistoryLength = 20;
 
         this.isOpen = false;
@@ -1356,63 +1349,45 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
     }
 
     async callGeminiAPI(userMessage) {
-        // Build conversation history for context
-        this.conversationHistory.push({
+        // Build simplified message history for API
+        const messages = this.conversationHistory.map(msg => ({
+            role: msg.role === 'user' ? 'user' : 'assistant',
+            content: msg.parts[0].text
+        }));
+
+        // Add current user message
+        messages.push({
             role: 'user',
-            parts: [{ text: userMessage }]
+            content: userMessage
         });
 
-        const requestBody = {
-            contents: [
-                // Sistem talimatı (scope değişkenleri artık prompt içinde template literal ile)
-                {
-                    role: 'user',
-                    parts: [{ text: this.systemPrompt }]
-                },
-                ...this.conversationHistory
-            ],
-            generationConfig: {
-                temperature: this.temperature,
-                maxOutputTokens: this.maxOutputTokens,
-                topP: this.topP,
-                topK: this.topK,
-                candidateCount: this.candidateCount
-            }
-        };
-        
-        // Only add thinkingConfig if model supports it (not for lite models when budget is 0)
-        if (this.thinkingBudget !== 0) {
-            requestBody.thinkingConfig = {
-                thinkingBudget: this.thinkingBudget
-            };
-        }
-
-        const response = await fetch(`${this.apiUrl}?key=${this.apiKey}`, {
+        // Call Vercel serverless function
+        const response = await fetch(this.apiEndpoint, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(requestBody)
+            body: JSON.stringify({
+                messages: messages,
+                systemPrompt: this.systemPrompt
+            })
         });
 
         if (!response.ok) {
             const errorData = await response.json();
             console.error('API Error:', errorData);
-            throw new Error(`API Error: ${response.status} - ${JSON.stringify(errorData)}`);
+            throw new Error(`API Error: ${response.status} - ${errorData.error || 'Unknown error'}`);
         }
 
         const data = await response.json();
-        console.log('API Response:', data); // Debug log
+        const botResponse = data.response;
+
+        // Update conversation history
+        this.conversationHistory.push({
+            role: 'user',
+            parts: [{ text: userMessage }]
+        });
         
-        // Check if response has the expected structure
-        if (!data.candidates || !data.candidates[0] || !data.candidates[0].content) {
-            console.error('Unexpected API response:', data);
-            throw new Error('Beklenmedik API yanıtı');
-        }
-
-        const botResponse = data.candidates[0].content.parts[0].text;
-
-        // Add bot response to history
         this.conversationHistory.push({
             role: 'model',
             parts: [{ text: botResponse }]

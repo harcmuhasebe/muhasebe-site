@@ -56,9 +56,23 @@ const ChatbotConfig = {
 
 ## Güvenlik 🔒
 
-- ✅ API key hardcode değil
-- ✅ `config.js` .gitignore'da
-- ⚠️ Production'da environment variables kullan
+- ✅ API key **asla** frontend'de değil
+- ✅ Vercel Serverless Function kullanılıyor (`/api/chat`)
+- ✅ API key Vercel Environment Variables'da
+- ✅ CORS koruması
+- ✅ POST-only endpoint
+
+### Vercel Environment Variables Kurulumu
+
+1. **Vercel Dashboard'a git:** https://vercel.com/dashboard
+2. **Projeyi seç:** harcmuhasebe/muhasebe-site
+3. **Settings → Environment Variables**
+4. **Yeni değişken ekle:**
+   - **Name:** `GEMINI_API_KEY`
+   - **Value:** `AIzaSyC4u456eaBu0xHbeAswwJTL_gEGsPGqMfw` (kendi API key'iniz)
+   - **Environment:** Production, Preview, Development (hepsini seç)
+5. **Save**
+6. **Redeploy:** Settings → Deployments → Latest → Redeploy
 
 ## Model Alternatifleri 🔄
 
