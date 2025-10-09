@@ -32,19 +32,13 @@
 - Optimal değer
 - Hız ve kalite dengesi
 
-**Thinking Budget: 0**
-- ⚠️ **gemini-flash-lite-latest** thinkingConfig desteklemiyor!
-- Lite modeller thinking özelliği yok
-- Maksimum hız için optimize edilmiş
-- Thinking istiyorsan `gemini-flash-latest` kullan
-- Kaynak: [Gemini Thinking Docs](https://ai.google.dev/gemini-api/docs/thinking)
 
 ### Config Dosyası
 ```javascript
 // assets/js/config.js
 const ChatbotConfig = {
-    GEMINI_API_KEY: 'AIzaSyC4u456eaBu0xHbeAswwJTL_gEGsPGqMfw',
-    GEMINI_API_URL: '.../gemini-flash-lite-latest:generateContent',
+    GEMINI_API_KEY: 'YOUR_GEMINI_API_KEY_HERE',
+    GEMINI_API_URL: 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent',
     MODEL_NAME: 'gemini-flash-lite-latest',
     
     // Optimize edilmiş parametreler
@@ -57,6 +51,8 @@ const ChatbotConfig = {
     MAX_HISTORY_LENGTH: 20      // Konuşma geçmişi
 };
 ```
+
+**Not:** API anahtarını `config.js` dosyasına ekleyin. Bu dosya `.gitignore`'da olduğu için Git'e gitmeyecektir.
 
 ## Güvenlik 🔒
 
