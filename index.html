@@ -60,7 +60,7 @@
     <!-- Critical CSS (Inline for mobile performance) -->
     <style>
         *{margin:0;padding:0;box-sizing:border-box}body{font-family:Inter,sans-serif;overflow-x:hidden;background:#fff}
-        .navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,.98);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.05);z-index:1000;transition:all .3s}
+        .navbar{position:fixed;top:0;width:100%;background:rgba(255,255,255,.98);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:0 2px 20px rgba(0,0,0,.05);z-index:1000;transition:all .3s}
         .navbar-container{max-width:1200px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center}
         .logo{height:40px;transition:transform .3s}.logo:hover{transform:scale(1.05)}
         .hero{min-height:100vh;display:flex;align-items:center;padding:6rem 2rem 2rem;background:linear-gradient(135deg,#f0fdf4 0%,#fff 100%)}
@@ -705,7 +705,7 @@
                     <h3>İletişim</h3>
                     <div class="contact-info">
                         <p><i class="fas fa-map-marker-alt"></i> İstanbul, Türkiye</p>
-                        <p><i class="fas fa-envelope"></i> info@harcmuhasebe.com.tr</p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:info@harcmuhasebe.com.tr" class="footer-email-link">info@harcmuhasebe.com.tr</a></p>
                     </div>
                 </div>
                
@@ -733,5 +733,7 @@
 
     <script src="assets/js/mail.js" defer></script>
     <script src="assets/js/script.js" defer></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/chatbot.js" defer></script>
 </body>
 </html>

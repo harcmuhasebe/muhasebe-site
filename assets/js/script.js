@@ -417,37 +417,16 @@ function initBackToTop() {
     const backToTopBtn = document.createElement('button');
     backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
     backToTopBtn.className = 'back-to-top';
-    backToTopBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background-color: var(--primary-color);
-        color: white;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-    `;
+    backToTopBtn.setAttribute('aria-label', 'Yukarı çık');
     
     document.body.appendChild(backToTopBtn);
     
     // Show/hide button based on scroll position
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
-            backToTopBtn.style.opacity = '1';
-            backToTopBtn.style.visibility = 'visible';
+            backToTopBtn.classList.add('visible');
         } else {
-            backToTopBtn.style.opacity = '0';
-            backToTopBtn.style.visibility = 'hidden';
+            backToTopBtn.classList.remove('visible');
         }
     });
     
@@ -600,14 +579,9 @@ window.addEventListener('resize', () => {
     }
 });
 
-// Add CSS for loading animation
+// Add CSS for form validation and lazy loading
 const style = document.createElement('style');
 style.textContent = `
-    .back-to-top:hover {
-        background-color: var(--primary-dark);
-        transform: translateY(-2px);
-    }
-    
     .error {
         border-color: #e74c3c !important;
         box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2) !important;
