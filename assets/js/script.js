@@ -425,7 +425,6 @@ function initBackToTop() {
         height: 50px;
         background-color: var(--primary-color);
         color: white;
-        border: none;
         border-radius: 50%;
         cursor: pointer;
         opacity: 0;
