@@ -1,6 +1,3 @@
-# API Keys and sensitive configuration
-assets/js/config.js
-
 # Environment files
 .env
 .env.local

@@ -1,17 +1,16 @@
 
 class HarcChatbot {
     constructor() {
-        // Load configuration from config.js
-        const config = window.ChatbotConfig || {};
-        this.apiKey = config.GEMINI_API_KEY || '';
-        this.apiUrl = config.GEMINI_API_URL || '';
-        this.temperature = config.TEMPERATURE || 0.4;
-        this.maxOutputTokens = config.MAX_OUTPUT_TOKENS || 500;
-        this.topP = config.TOP_P || 0.95;
-        this.topK = config.TOP_K || 40;
-        this.thinkingBudget = config.THINKING_BUDGET || 0;
-        this.candidateCount = config.CANDIDATE_COUNT || 1;
-        this.maxHistoryLength = config.MAX_HISTORY_LENGTH || 20;
+        // API Configuration (embedded for deployment)
+        this.apiKey = 'AIzaSyC4u456eaBu0xHbeAswwJTL_gEGsPGqMfw';
+        this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent';
+        this.temperature = 0.4;
+        this.maxOutputTokens = 500;
+        this.topP = 0.95;
+        this.topK = 40;
+        this.thinkingBudget = 0;
+        this.candidateCount = 1;
+        this.maxHistoryLength = 20;
 
         this.isOpen = false;
         this.conversationHistory = [];
