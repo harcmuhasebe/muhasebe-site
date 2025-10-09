@@ -4,13 +4,13 @@
   "description": "İnşaat sektörü için yapay zeka destekli muhasebe yazılımı",
   "icons": [
     {
-      "src": "assets/images/favicon.png",
-      "sizes": "192x192",
+      "src": "assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
       "type": "image/png"
     },
     {
       "src": "assets/images/favicon.png",
-      "sizes": "512x512",
+      "sizes": "1024x1024",
       "type": "image/png"
     }
   ],
