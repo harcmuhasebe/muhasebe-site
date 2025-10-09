@@ -3,17 +3,26 @@ const EMAILJS_SERVICE_ID = 'service_ntcr2uy';
 const EMAILJS_TEMPLATE_ID = 'template_k6xzoix';
 const EMAILJS_PUBLIC_KEY = 'POLb_RP5SJeLhzzkz'; // Bu anahtarı EmailJS dashboard'dan alacaksınız
 
-// EmailJS initialization
-(function() {
+// EmailJS initialization with defer support
+function initializeEmailJS() {
     // EmailJS'yi yükle
     if (typeof emailjs === 'undefined') {
         console.error('EmailJS kütüphanesi yüklenmedi. Lütfen CDN linkini kontrol edin.');
+        // Retry after a short delay
+        setTimeout(initializeEmailJS, 100);
         return;
     }
     
     // EmailJS'yi başlat
     emailjs.init(EMAILJS_PUBLIC_KEY);
-})();
+}
+
+// Initialize EmailJS when script loads
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeEmailJS);
+} else {
+    initializeEmailJS();
+}
 
 // Form verilerini email olarak gönder
 async function sendContactForm(formData) {

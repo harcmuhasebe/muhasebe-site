@@ -117,9 +117,9 @@ muhasebe-site/
 
 ## 📞 İletişim
 
-- **E-posta:** info@harcmuhasebe.com.tr
+- **E-posta:** [info@harcmuhasebe.com.tr](mailto:info@harcmuhasebe.com.tr)
 - **Konum:** İstanbul, Türkiye
-- **Website:** [Harç Muhasebe](http://localhost:8000)
+- **Website:** [Harç Muhasebe](https://www.harcmuhasebe.com.tr)
 
 ## 📄 Lisans
 
