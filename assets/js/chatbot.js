@@ -1387,7 +1387,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
             role: 'user',
             parts: [{ text: userMessage }]
         });
-        
+
         this.conversationHistory.push({
             role: 'model',
             parts: [{ text: botResponse }]
