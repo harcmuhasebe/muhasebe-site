@@ -261,7 +261,7 @@ ${JSON.stringify(contextData, null, 2)}
             const gizlilik_politikasi_sayfasi = {
                 baslik: gp.baslik || 'Gizlilik Politikası',
                 son_guncelleme: gpTarih,
-                url: `${this.siteUrl}/gizlilik-politikasi.html`,
+                url: `${this.siteUrl}/gizlilik-politikasi`,
                 giris: gp.giris || 'Giriş bilgisi bulunamadı.',
                 ana_basliklar: gp.ana_basliklar || [],
                 bolumler: gp.bolumler || [],
@@ -272,7 +272,7 @@ ${JSON.stringify(contextData, null, 2)}
             const kullanim_kosullari_sayfasi = {
                 baslik: kk.baslik || 'Kullanım Koşulları',
                 son_guncelleme: kkTarih,
-                url: `${this.siteUrl}/kullanim-kosullari.html`,
+                url: `${this.siteUrl}/kullanim-kosullari`,
                 giris: kk.giris || 'Giriş bilgisi bulunamadı.',
                 ana_basliklar: kk.ana_basliklar || [],
                 bolumler: kk.bolumler || [],
@@ -376,7 +376,7 @@ Sen HARÇ AI'sın - Harç Muhasebe Yazılımı'nın resmi müşteri destek asist
    Örnekler:
    ✅ "Ne zaman güncellendi?" → Sadece tarihi söyle
    ✅ "KVKK haklarım neler?" → Doğrudan listele, citation yok
-   ✅ "Detaylı bilgi için https://www.harcmuhasebe.com.tr/gizlilik-politikasi.html adresini ziyaret edebilirsiniz."
+   ✅ "Detaylı bilgi için https://www.harcmuhasebe.com.tr/gizlilik-politikasi adresini ziyaret edebilirsiniz."
 
 **4. Ton ve Üslup**
    • Profesyonel ama samimi ve yardımsever
@@ -433,7 +433,7 @@ Sen HARÇ AI'sın - Harç Muhasebe Yazılımı'nın resmi müşteri destek asist
 * Verilerin silinmesini veya yok edilmesini talep etme
 * Verilerin üçüncü kişilere aktarılması durumunda bilgilendirilme
 
-Detaylı bilgi için https://www.harcmuhasebe.com.tr/gizlilik-politikasi.html adresini ziyaret edebilirsiniz."
+Detaylı bilgi için https://www.harcmuhasebe.com.tr/gizlilik-politikasi adresini ziyaret edebilirsiniz."
 
 **ÖRNEK 3 - Güvenlik Sorusu:**
 👤 Kullanıcı: "Verilerim güvende mi?"
