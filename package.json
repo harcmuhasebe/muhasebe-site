@@ -4,11 +4,15 @@
   "type": "module",
   "description": "Harç - İnşaat Muhasebe Yazılımı",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'Static site - no build needed'"
+    "start": "node server.js",
+    "prod": "vercel dev"
   },
   "keywords": ["muhasebe", "inşaat", "chatbot"],
   "author": "HARÇ YAZILIM",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0"
+  }
 }
 

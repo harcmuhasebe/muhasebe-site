@@ -562,7 +562,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     height: 60px;
                     border-radius: 50%;
                     background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
-                    border: 3px solid #ffffff;
+                        border: 3px solid #ffffff;
                     color: white;
                     font-size: 1.5rem;
                     cursor: pointer;
@@ -617,6 +617,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    flex-shrink: 0;
                 }
 
                 .chatbot-header-info {
@@ -667,6 +668,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     display: flex;
                     flex-direction: column;
                     gap: 12px;
+                    min-height: 0;
+                    flex-shrink: 1;
                 }
 
                 .chatbot-messages::-webkit-scrollbar {
@@ -830,10 +833,15 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     padding: 16px;
                     background: white;
                     border-top: 1px solid #E5E7EB;
+                    flex-shrink: 0;
+                    position: sticky;
+                    bottom: 0;
+                    z-index: 10;
                 }
 
                 .chatbot-input {
                     flex: 1;
+                    min-width: 0;
                     padding: 10px 14px;
                     border: 2px solid #E5E7EB;
                     border-radius: 24px;
@@ -882,16 +890,18 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     }
 
                     .chatbot-window {
-                        position: fixed !important;
-                        top: 0 !important;
-                        left: 0 !important;
-                        right: 0 !important;
-                        bottom: 0 !important;
-                        width: 100vw !important;
-                        height: 100vh !important;
-                        max-height: 100vh !important;
-                        border-radius: 0 !important;
-                        z-index: 99999 !important;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100vw;
+                        height: 100%;
+                        max-height: 100vh;
+                        border-radius: 0;
+                        z-index: 99999;
+                        overflow-y: auto;
+                        -webkit-overflow-scrolling: touch;
                     }
 
                     .chatbot-header {
@@ -919,7 +929,9 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
                     .chatbot-input-container {
                         padding: 12px;
+                        padding-bottom: calc(12px + env(safe-area-inset-bottom));
                         gap: 6px;
+                        min-height: 64px;
                     }
 
                     .chatbot-input {
@@ -944,16 +956,18 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
                 @media (max-width: 480px) {
                     .chatbot-window {
-                        position: fixed !important;
-                        top: 0 !important;
-                        left: 0 !important;
-                        right: 0 !important;
-                        bottom: 0 !important;
-                        width: 100vw !important;
-                        height: 100vh !important;
-                        max-height: 100vh !important;
-                        border-radius: 0 !important;
-                        z-index: 99999 !important;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100vw;
+                        height: 100%;
+                        max-height: 100vh;
+                        border-radius: 0;
+                        z-index: 99999;
+                        overflow-y: auto;
+                        -webkit-overflow-scrolling: touch;
                     }
 
                     .chatbot-toggle {
@@ -1013,7 +1027,9 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
                     .chatbot-input-container {
                         padding: 10px;
+                        padding-bottom: calc(10px + env(safe-area-inset-bottom));
                         gap: 6px;
+                        min-height: 56px;
                     }
 
                     .chatbot-input {

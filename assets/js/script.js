@@ -417,36 +417,15 @@ function initBackToTop() {
     const backToTopBtn = document.createElement('button');
     backToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
     backToTopBtn.className = 'back-to-top';
-    backToTopBtn.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        background-color: var(--primary-color);
-        color: white;
-        border-radius: 50%;
-        cursor: pointer;
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-    `;
     
     document.body.appendChild(backToTopBtn);
     
     // Show/hide button based on scroll position
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
-            backToTopBtn.style.opacity = '1';
-            backToTopBtn.style.visibility = 'visible';
+            backToTopBtn.classList.add('visible');
         } else {
-            backToTopBtn.style.opacity = '0';
-            backToTopBtn.style.visibility = 'hidden';
+            backToTopBtn.classList.remove('visible');
         }
     });
     
@@ -490,32 +469,49 @@ function initVideoModal() {
 
     if (demoBtn && videoModal) {
         // Open modal
-        demoBtn.addEventListener('click', () => {
+        demoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             videoModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            // Autoplay video if present
-            if (demoVideo) {
-                demoVideo.play();
-            }
+            document.body.style.overflow = 'hidden';
+            
+            // For iframe (Vimeo/YouTube), just open modal
+            // Video will autoplay based on URL parameters
         });
 
         // Close modal functions
         const closeModal = () => {
             videoModal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restore scrolling
-            if (demoVideo) {
-                demoVideo.pause(); // Pause video when modal closes
+            document.body.style.overflow = 'auto';
+            
+            // Stop iframe video by reloading src
+            if (demoVideo && demoVideo.tagName === 'IFRAME') {
+                const src = demoVideo.src;
+                demoVideo.src = '';
+                setTimeout(() => {
+                    demoVideo.src = src;
+                }, 100);
             }
         };
 
         // Close on X button
         if (modalClose) {
-            modalClose.addEventListener('click', closeModal);
+            modalClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeModal();
+            });
         }
 
-        // Close on overlay click
+        // Close on overlay click ONLY
         if (modalOverlay) {
             modalOverlay.addEventListener('click', closeModal);
+        }
+
+        // Prevent modal content clicks from closing modal
+        const modalContent = document.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
         }
 
         // Close on Escape key
@@ -556,9 +552,18 @@ window.addEventListener('resize', () => {
 // Add CSS for loading animation
 const style = document.createElement('style');
 style.textContent = `
+    .back-to-top {
+        background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+        color: white;
+        border: 3px solid #ffffff;
+        box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+    }
+
     .back-to-top:hover {
-        background-color: var(--primary-dark);
+        background: white;
+        color: #2E7D32;
         transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
     }
     
     .error {

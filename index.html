@@ -662,11 +662,11 @@
                     <form class="contact-form" id="contactForm">
                         <div class="form-group">
                             <label for="name">Ad Soyad / Unvan</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" name="name" placeholder="Adınızı ve soyadınızı girin" required>
                         </div>
                         <div class="form-group">
                             <label for="email">e-Posta</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="email" placeholder="ornek@email.com" required>
                         </div>
                         <div class="form-group">
                             <label for="phone">Cep Telefonu</label>
@@ -676,7 +676,7 @@
                                     <option value="+1">+1</option>
                                     <option value="+44">+44</option>
                                 </select>
-                                <input type="tel" id="phone" name="phone" required>
+                                <input type="tel" id="phone" name="phone" placeholder="5XX XXX XX XX" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -706,14 +706,14 @@
                             <label class="checkbox-label">
                                 <input type="checkbox" id="consent1" name="consent1" required>
                                 <span class="checkmark"></span>
-                                Aydınlatma Metnini uyarınca, kişisel verilerimin aktarılmasına Açık Rıza Metni kapsamında açık rıza veriyorum.
+                                Aydınlatma Metni uyarınca kişisel verilerimin işlenmesine ve aktarılmasına açık rıza veriyorum.
                             </label>
                         </div>
                         <div class="checkbox-group">
                             <label class="checkbox-label">
                                 <input type="checkbox" id="consent2" name="consent2" required>
                                 <span class="checkmark"></span>
-                                Aydınlatma Metni kapsamında, tarafıma HARÇ YAZILIM tarafından ticari elektronik ileti gönderilmesini, Açık Rıza Metni kapsamında onay/açık rıza veriyorum.
+                                Aydınlatma Metni kapsamında, tarafıma HARÇ YAZILIM tarafından ticari elektronik ileti gönderilmesine açık rıza veriyorum.
                             </label>
                         </div>
                         <button type="submit" class="btn btn-primary btn-large form-submit">Gönder</button>
@@ -762,7 +762,14 @@
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
             <div class="video-container">
-                <iframe id="demoIframe" src="" data-src="https://youtu.be/VoXJJotmkEI" title="Demo Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+                <iframe 
+                    id="demoVideo"
+                    src="https://player.vimeo.com/video/1126192631?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                    title="Demo Video"
+                    loading="lazy">
+                </iframe>
             </div>
         </div>
     </div>

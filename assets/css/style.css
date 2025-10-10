@@ -842,12 +842,13 @@ p {
     transition: all 0.3s ease;
     background-color: var(--white-color);
     font-family: 'Inter', sans-serif;
-    color: var(--text-color);
+    color: var(--dark-color);
 }
 
 .form-group input::placeholder {
     color: #9CA3AF;
-    opacity: 1;
+    opacity: 0.7;
+    font-size: 0.9rem;
 }
 
 .form-group input:hover {
@@ -875,7 +876,7 @@ p {
     padding-right: 45px;
     cursor: pointer;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--dark-color);
 }
 
 .form-group select:hover {
@@ -898,7 +899,7 @@ p {
 .form-group select option {
     padding: 10px;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--dark-color);
     background-color: var(--white-color);
 }
 
@@ -985,8 +986,8 @@ p {
     content: "";
     position: absolute;
     display: none;
-    left: 7px;
-    top: 3px;
+    left: 6px;
+    top: 2px;
     width: 5px;
     height: 10px;
     border: solid white;
@@ -1426,9 +1427,9 @@ p {
 
 .modal-content {
     position: relative;
-    background-color: var(--white-color);
-    border-radius: var(--border-radius-large);
-    padding: 1rem;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
     max-width: 95vw;
     max-height: 95vh;
     width: 1000px;
@@ -1441,16 +1442,16 @@ p {
         width: 95vw;
         max-width: 95vw;
         max-height: 90vh;
-        padding: 0.5rem;
-        margin: 10px;
+        padding: 0;
+        margin: 0;
     }
 }
 
 .modal-close {
     position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: rgba(0, 0, 0, 0.5);
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
     border: none;
     font-size: 1.5rem;
     color: var(--white-color);
@@ -1467,8 +1468,8 @@ p {
 
 @media (max-width: 768px) {
     .modal-close {
-        top: 0.25rem;
-        right: 0.25rem;
+        top: 5px;
+        right: 5px;
         width: 30px;
         height: 30px;
         font-size: 1.2rem;
@@ -1487,13 +1488,13 @@ p {
     padding-bottom: 56.25%; /* 16:9 aspect ratio */
     position: relative;
     overflow: hidden;
-    border-radius: var(--border-radius);
+    border-radius: 0;
 }
 
 @media (max-width: 768px) {
     .video-container {
         padding-bottom: 50%; /* Daha kısa aspect ratio mobilde */
-        border-radius: 8px;
+        border-radius: 0;
     }
 }
 
@@ -1523,8 +1524,9 @@ p {
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
     color: white;
+    border: 3px solid #ffffff;
     border-radius: 50%;
     cursor: pointer;
     opacity: 0;
@@ -1535,11 +1537,14 @@ p {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
 }
 
 .back-to-top:hover {
-    background-color: var(--primary-dark);
+    background: white;
+    color: #2E7D32;
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
 }
 
 /* Hide back to top button on mobile devices */
@@ -1588,7 +1593,7 @@ p {
     right: 20px;
     width: 50px;
     height: 50px;
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
     color: white;
     border: 3px solid #ffffff;
     border-radius: 50%;
@@ -1601,18 +1606,26 @@ p {
     align-items: center;
     justify-content: center;
     font-size: 1.2rem;
-    box-shadow: var(--shadow-medium);
+    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
 }
 
 .back-to-top:hover {
-    background-color: white;
-    color: var(--primary-color);
+    background: white;
+    color: #2E7D32;
     transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
 }
 
 .back-to-top.visible {
     opacity: 1;
     visibility: visible;
+}
+
+.back-to-top:hover {
+    background: white;
+    color: #2E7D32;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
 }
 
 /* Chatbot message links */
@@ -1645,6 +1658,19 @@ p {
     }
 }
 
+/* Chatbot input flexbox fix */
+.chatbot-input {
+    min-width: 0 !important;
+}
+
+/* Chatbot input container sticky fix for mobile keyboard */
+.chatbot-input-container {
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 10 !important;
+    background: white !important;
+}
+
 /* Chatbot Mobile Full Screen Styles - Override inline styles */
 @media (max-width: 768px) {
     #chatbotContainer,
@@ -1670,8 +1696,6 @@ p {
     }
     
     .chatbot-messages {
-        height: calc(100vh - 140px) !important;
-        max-height: calc(100vh - 140px) !important;
         padding: 20px !important;
         margin: 0 !important;
         border-radius: 0 !important;
@@ -1715,8 +1739,6 @@ p {
     }
     
     .chatbot-messages {
-        height: calc(100vh - 120px) !important;
-        max-height: calc(100vh - 120px) !important;
         padding: 15px !important;
         margin: 0 !important;
         border-radius: 0 !important;
