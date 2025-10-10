@@ -1632,6 +1632,11 @@ p {
     color: #388E3C;
 }
 
+/* Chatbot input flexbox fix */
+.chatbot-input {
+    min-width: 0 !important;
+}
+
 /* Mobile responsive adjustments for back-to-top */
 @media (max-width: 768px) {
     .back-to-top {
@@ -1670,8 +1675,6 @@ p {
     }
     
     .chatbot-messages {
-        height: calc(100vh - 140px) !important;
-        max-height: calc(100vh - 140px) !important;
         padding: 20px !important;
         margin: 0 !important;
         border-radius: 0 !important;
@@ -1715,8 +1718,6 @@ p {
     }
     
     .chatbot-messages {
-        height: calc(100vh - 120px) !important;
-        max-height: calc(100vh - 120px) !important;
         padding: 15px !important;
         margin: 0 !important;
         border-radius: 0 !important;
