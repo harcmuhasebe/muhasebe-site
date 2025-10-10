@@ -888,7 +888,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                         right: 0 !important;
                         bottom: 0 !important;
                         width: 100vw !important;
-                        height: 80vh !important;
+                        height: 100vh !important;
                         max-height: 100vh !important;
                         border-radius: 0 !important;
                         z-index: 99999 !important;
@@ -950,7 +950,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                         right: 0 !important;
                         bottom: 0 !important;
                         width: 100vw !important;
-                        height: 80vh !important;
+                        height: 100vh !important;
                         max-height: 100vh !important;
                         border-radius: 0 !important;
                         z-index: 99999 !important;
