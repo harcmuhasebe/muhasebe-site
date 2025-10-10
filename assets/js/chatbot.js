@@ -834,6 +834,9 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     background: white;
                     border-top: 1px solid #E5E7EB;
                     flex-shrink: 0;
+                    position: sticky;
+                    bottom: 0;
+                    z-index: 10;
                 }
 
                 .chatbot-input {
@@ -897,6 +900,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                         max-height: 100vh;
                         border-radius: 0;
                         z-index: 99999;
+                        overflow-y: auto;
+                        -webkit-overflow-scrolling: touch;
                     }
 
                     .chatbot-header {
@@ -961,6 +966,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                         max-height: 100vh;
                         border-radius: 0;
                         z-index: 99999;
+                        overflow-y: auto;
+                        -webkit-overflow-scrolling: touch;
                     }
 
                     .chatbot-toggle {
