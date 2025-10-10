@@ -838,6 +838,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
                 .chatbot-input {
                     flex: 1;
+                    min-width: 0;
                     padding: 10px 14px;
                     border: 2px solid #E5E7EB;
                     border-radius: 24px;
@@ -892,8 +893,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                         right: 0 !important;
                         bottom: 0 !important;
                         width: 100vw !important;
-                        height: 100dvh;
-                        max-height: 100dvh !important;
+                        height: 100%;
+                        max-height: 100vh !important;
                         border-radius: 0 !important;
                         z-index: 99999 !important;
                     }
@@ -956,8 +957,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                         right: 0 !important;
                         bottom: 0 !important;
                         width: 100vw !important;
-                        height: 100dvh;
-                        max-height: 100dvh !important;
+                        height: 100%;
+                        max-height: 100vh !important;
                         border-radius: 0 !important;
                         z-index: 99999 !important;
                     }
@@ -1048,7 +1049,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                 @media (max-width: 360px) {
                     .chatbot-window {
                         width: calc(100vw - 16px);
-                        /* height kaldırıldı - 100dvh değeri üst medya sorgusundan miras alınır */
+                        height: calc(100vh - 120px);
                         right: 8px;
                         left: 8px;
                         bottom: 70px;
