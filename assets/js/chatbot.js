@@ -1192,6 +1192,29 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
         messagesContainer.appendChild(messageDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        
+        // Mobil için ekstra scroll (viewport değişikliklerini telafi eder)
+        setTimeout(() => {
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+        }, 50);
+    }
+
+    scrollToBottom() {
+        // Mobilde klavye kapandıktan sonra viewport düzgün ayarlanması için gecikme ekle
+        setTimeout(() => {
+            const messagesContainer = document.getElementById('chatbotMessages');
+            if (messagesContainer) {
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }, 100);
+        
+        // Ekstra güvenlik için 300ms sonra tekrar scroll yap
+        setTimeout(() => {
+            const messagesContainer = document.getElementById('chatbotMessages');
+            if (messagesContainer) {
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }
+        }, 300);
     }
 
     showTypingIndicator() {
@@ -1232,6 +1255,10 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
         // Add user message
         this.addMessage(message, 'user');
         input.value = '';
+        
+        // Input'tan focus'u kaldır (mobilde klavyeyi kapatır)
+        input.blur();
+        
         sendBtn.disabled = true;
 
         // Show typing indicator
@@ -1248,6 +1275,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
             this.addMessage('Üzgünüm, bir hata oluştu. Lütfen daha sonra tekrar deneyin veya info@harcmuhasebe.com.tr adresinden bize ulaşın.', 'bot');
         } finally {
             sendBtn.disabled = false;
+            // Mesaj gönderildikten sonra scroll'u düzelt (mobil için gecikme ekle)
+            this.scrollToBottom();
         }
     }
 
