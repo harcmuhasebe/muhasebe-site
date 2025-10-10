@@ -617,6 +617,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
+                    flex-shrink: 0;
                 }
 
                 .chatbot-header-info {
@@ -667,6 +668,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     display: flex;
                     flex-direction: column;
                     gap: 12px;
+                    min-height: 0;
+                    flex-shrink: 1;
                 }
 
                 .chatbot-messages::-webkit-scrollbar {
@@ -830,6 +833,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     padding: 16px;
                     background: white;
                     border-top: 1px solid #E5E7EB;
+                    flex-shrink: 0;
                 }
 
                 .chatbot-input {
@@ -919,7 +923,9 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
                     .chatbot-input-container {
                         padding: 12px;
+                        padding-bottom: calc(12px + env(safe-area-inset-bottom));
                         gap: 6px;
+                        min-height: 64px;
                     }
 
                     .chatbot-input {
@@ -1013,7 +1019,9 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
                     .chatbot-input-container {
                         padding: 10px;
+                        padding-bottom: calc(10px + env(safe-area-inset-bottom));
                         gap: 6px;
+                        min-height: 56px;
                     }
 
                     .chatbot-input {
