@@ -887,16 +887,16 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     }
 
                     .chatbot-window {
-                        position: fixed !important;
-                        top: 0 !important;
-                        left: 0 !important;
-                        right: 0 !important;
-                        bottom: 0 !important;
-                        width: 100vw !important;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100vw;
                         height: 100%;
-                        max-height: 100vh !important;
-                        border-radius: 0 !important;
-                        z-index: 99999 !important;
+                        max-height: 100vh;
+                        border-radius: 0;
+                        z-index: 99999;
                     }
 
                     .chatbot-header {
@@ -951,16 +951,16 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
 
                 @media (max-width: 480px) {
                     .chatbot-window {
-                        position: fixed !important;
-                        top: 0 !important;
-                        left: 0 !important;
-                        right: 0 !important;
-                        bottom: 0 !important;
-                        width: 100vw !important;
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 100vw;
                         height: 100%;
-                        max-height: 100vh !important;
-                        border-radius: 0 !important;
-                        z-index: 99999 !important;
+                        max-height: 100vh;
+                        border-radius: 0;
+                        z-index: 99999;
                     }
 
                     .chatbot-toggle {
