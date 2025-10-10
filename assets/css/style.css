@@ -1645,6 +1645,19 @@ p {
     color: #388E3C;
 }
 
+/* Chatbot input flexbox fix */
+.chatbot-input {
+    min-width: 0 !important;
+}
+
+/* Chatbot input container sticky fix for mobile keyboard */
+.chatbot-input-container {
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 10 !important;
+    background: white !important;
+}
+
 /* Mobile responsive adjustments for back-to-top */
 @media (max-width: 768px) {
     .back-to-top {
