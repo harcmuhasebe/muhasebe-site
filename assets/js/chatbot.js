@@ -1048,7 +1048,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                 @media (max-width: 360px) {
                     .chatbot-window {
                         width: calc(100vw - 16px);
-                        height: calc(100vh - 120px);
+                        /* height kaldırıldı - 100dvh değeri üst medya sorgusundan miras alınır */
                         right: 8px;
                         left: 8px;
                         bottom: 70px;
