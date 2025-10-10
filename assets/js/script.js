@@ -490,32 +490,49 @@ function initVideoModal() {
 
     if (demoBtn && videoModal) {
         // Open modal
-        demoBtn.addEventListener('click', () => {
+        demoBtn.addEventListener('click', (e) => {
+            e.preventDefault();
             videoModal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            // Autoplay video if present
-            if (demoVideo) {
-                demoVideo.play();
-            }
+            document.body.style.overflow = 'hidden';
+            
+            // For iframe (Vimeo/YouTube), just open modal
+            // Video will autoplay based on URL parameters
         });
 
         // Close modal functions
         const closeModal = () => {
             videoModal.classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restore scrolling
-            if (demoVideo) {
-                demoVideo.pause(); // Pause video when modal closes
+            document.body.style.overflow = 'auto';
+            
+            // Stop iframe video by reloading src
+            if (demoVideo && demoVideo.tagName === 'IFRAME') {
+                const src = demoVideo.src;
+                demoVideo.src = '';
+                setTimeout(() => {
+                    demoVideo.src = src;
+                }, 100);
             }
         };
 
         // Close on X button
         if (modalClose) {
-            modalClose.addEventListener('click', closeModal);
+            modalClose.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeModal();
+            });
         }
 
-        // Close on overlay click
+        // Close on overlay click ONLY
         if (modalOverlay) {
             modalOverlay.addEventListener('click', closeModal);
+        }
+
+        // Prevent modal content clicks from closing modal
+        const modalContent = document.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
         }
 
         // Close on Escape key
