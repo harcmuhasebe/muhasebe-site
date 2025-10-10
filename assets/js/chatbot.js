@@ -1076,7 +1076,12 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
         window.classList.toggle('active');
         
         if (this.isOpen) {
-            document.getElementById('chatbotInput').focus();
+            // Sadece masaüstü cihazlarda otomatik focus yap
+            // Mobilde kullanıcı kendisi input'a tıklayınca klavye açılsın
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (!isMobile) {
+                document.getElementById('chatbotInput').focus();
+            }
         }
     }
 
