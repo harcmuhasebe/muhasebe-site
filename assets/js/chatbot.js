@@ -561,6 +561,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     right: 90px;
                     z-index: 999;
                     font-family: 'Inter', sans-serif;
+                    pointer-events: none;
                 }
 
                 .chatbot-toggle {
@@ -577,6 +578,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    pointer-events: auto;
                 }
 
                 .chatbot-toggle:hover {
@@ -599,10 +601,12 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     flex-direction: column;
                     overflow: hidden;
                     animation: slideUp 0.3s ease;
+                    pointer-events: none;
                 }
 
                 .chatbot-window.active {
                     display: flex;
+                    pointer-events: auto;
                 }
 
                 @keyframes slideUp {
