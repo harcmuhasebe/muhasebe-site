@@ -11,6 +11,7 @@ class HarcChatbot {
         this.contextData = null; // Parsed JSON context for programmatic answers
         this.baseDomain = 'harcmuhasebe.com.tr';
         this.siteUrl = 'https://www.harcmuhasebe.com.tr';
+        this.vvCleanup = null; // iOS visualViewport cleanup function
 
         // System prompt - only about Harç software (will be updated after context loads)
         this.systemPrompt = this.buildSystemPrompt();
@@ -533,6 +534,11 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                             id="chatbotInput" 
                             placeholder="Mesajınızı yazın..."
                             aria-label="Mesaj girin"
+                            inputmode="text"
+                            enterkeyhint="send"
+                            autocomplete="off"
+                            autocorrect="off"
+                            autocapitalize="sentences"
                         />
                         <button class="chatbot-send" id="chatbotSend" aria-label="Gönder">
                             <i class="fas fa-paper-plane"></i>
@@ -1084,6 +1090,9 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
         input.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') this.sendMessage();
         });
+        
+        // iOS Safari keyboard adjustment
+        this.setupVisualViewportAdjust();
     }
 
     toggleChatbot() {
@@ -1454,6 +1463,44 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
         }
 
         return botResponse;
+    }
+    
+    // iOS Safari keyboard visual viewport adjustment
+    setupVisualViewportAdjust() {
+        const messages = document.getElementById('chatbotMessages');
+        const bar = document.querySelector('.chatbot-input-container');
+        
+        const apply = () => {
+            if (!window.visualViewport || !bar || !messages) return;
+            const vv = window.visualViewport;
+            // Klavye yüksekliği (iOS): tam pencere - görünür yükseklik
+            const keyboard = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+            // Input barı yukarı taşı
+            bar.style.transform = `translateY(-${keyboard}px)`;
+            // Mesajlar alanına alttan boşluk ver
+            const barH = bar.offsetHeight || 64;
+            messages.style.paddingBottom = `${barH + keyboard + 24}px`;
+            
+            // Yeni mesaj eklendiğinde scroll'u en alta çek
+            if (keyboard > 0) {
+                setTimeout(() => {
+                    messages.scrollTop = messages.scrollHeight;
+                }, 100);
+            }
+        };
+        
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', apply);
+            window.visualViewport.addEventListener('scroll', apply);
+            window.addEventListener('orientationchange', apply);
+            // İlk kurulum
+            apply();
+            this.vvCleanup = () => {
+                window.visualViewport.removeEventListener('resize', apply);
+                window.visualViewport.removeEventListener('scroll', apply);
+                window.removeEventListener('orientationchange', apply);
+            };
+        }
     }
 }
 
