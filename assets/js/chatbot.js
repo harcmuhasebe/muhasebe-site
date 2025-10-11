@@ -1282,10 +1282,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
         input.value = '';
         
         // Input'tan focus'u kaldır (mobilde klavyeyi kapatır)
-        // Küçük gecikme ile blur yaparak smooth animasyon sağla
-        setTimeout(() => {
-            input.blur();
-        }, 100);
+        input.blur();
         
         sendBtn.disabled = true;
 
@@ -1472,7 +1469,6 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
     setupVisualViewportAdjust() {
         const messages = document.getElementById('chatbotMessages');
         const bar = document.querySelector('.chatbot-input-container');
-        let lastKeyboard = 0;
         
         const apply = () => {
             if (!window.visualViewport || !bar || !messages) return;
@@ -1482,17 +1478,11 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
             
             // Eğer klavye kapalıysa (keyboard <= 5px), transform'u kaldır
             if (keyboard <= 5) {
-                // Eğer önceden klavye açıktıysa, yumuşak geçiş yap
-                if (lastKeyboard > 50) {
-                    bar.style.transition = 'transform 0.25s ease-in-out';
-                }
                 bar.style.transform = '';
                 const barH = bar.offsetHeight || 64;
                 messages.style.paddingBottom = `${barH + 24}px`;
             } else {
-                // Klavye açıksa, daha hızlı bir transition kullan
-                bar.style.transition = 'transform 0.15s ease-out';
-                // Input barı yukarı taşı
+                // Klavye açıksa, input barı yukarı taşı
                 bar.style.transform = `translateY(-${keyboard}px)`;
                 // Mesajlar alanına alttan boşluk ver
                 const barH = bar.offsetHeight || 64;
@@ -1503,8 +1493,6 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     messages.scrollTop = messages.scrollHeight;
                 }, 100);
             }
-            
-            lastKeyboard = keyboard;
         };
         
         if (window.visualViewport) {
