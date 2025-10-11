@@ -12,6 +12,7 @@ class HarcChatbot {
         this.baseDomain = 'harcmuhasebe.com.tr';
         this.siteUrl = 'https://www.harcmuhasebe.com.tr';
         this.vvCleanup = null; // iOS visualViewport cleanup function
+        this.visualViewportEnabled = true; // Flag to temporarily disable viewport adjustments
 
         // System prompt - only about Harç software (will be updated after context loads)
         this.systemPrompt = this.buildSystemPrompt();
@@ -1289,11 +1290,34 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
         this.addMessage(message, 'user');
         input.value = '';
         
-        // Input'tan focus'u kaldır (mobilde klavyeyi kapatır)
-        // 100ms gecikme ile blur() yaparak DOM güncellemesinin bitmesini sağla
-        setTimeout(() => {
-            input.blur();
-        }, 100);
+        // iOS Safari: Zıplama önleme - visualViewport listener'ları geçici kapat
+        const bar = document.querySelector('.chatbot-input-container');
+        if (bar && this.visualViewportEnabled) {
+            // Transform'u manuel olarak sıfırla
+            bar.style.transition = 'transform 0.3s ease-out';
+            bar.style.transform = '';
+            
+            // Listener'ları geçici olarak devre dışı bırak
+            this.visualViewportEnabled = false;
+            
+            // Blur yap
+            setTimeout(() => {
+                input.blur();
+                
+                // Listener'ları 500ms sonra tekrar aç
+                setTimeout(() => {
+                    this.visualViewportEnabled = true;
+                    if (bar) {
+                        bar.style.transition = '';
+                    }
+                }, 500);
+            }, 50);
+        } else {
+            // Fallback: normal blur
+            setTimeout(() => {
+                input.blur();
+            }, 100);
+        }
         
         sendBtn.disabled = true;
 
@@ -1482,6 +1506,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
         const bar = document.querySelector('.chatbot-input-container');
         
         const apply = () => {
+            // Eğer visualViewport geçici olarak devre dışıysa, işlem yapma
+            if (!this.visualViewportEnabled) return;
             if (!window.visualViewport || !bar || !messages) return;
             
             // requestAnimationFrame ile smooth rendering sağla
