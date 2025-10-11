@@ -1,23 +1,32 @@
 {
-  "name": "Harç - İnşaat Muhasebe Yazılımı",
+  "name": "Harç Muhasebe",
   "short_name": "Harç",
   "description": "İnşaat sektörü için yapay zeka destekli muhasebe yazılımı",
   "icons": [
     {
-      "src": "assets/images/apple-touch-icon.png",
-      "sizes": "180x180",
-      "type": "image/png"
+      "src": "/assets/images/favicon.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "assets/images/favicon.png",
-      "sizes": "1024x1024",
-      "type": "image/png"
+      "src": "/assets/images/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/images/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
   "theme_color": "#059669",
   "background_color": "#ffffff",
   "display": "standalone",
   "start_url": "/",
-  "scope": "/"
+  "scope": "/",
+  "orientation": "portrait-primary"
 }
 
