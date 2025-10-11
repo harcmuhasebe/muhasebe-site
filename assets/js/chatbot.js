@@ -542,7 +542,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                             autocapitalize="sentences"
                         />
                         <button class="chatbot-send" id="chatbotSend" aria-label="Gönder">
-                            <i class="fas fa-paper-plane"></i>
+                            <i class="fas fa-arrow-up"></i>
                         </button>
                     </div>
                 </div>
@@ -955,7 +955,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     .chatbot-send {
                         width: 40px;
                         height: 40px;
-                        font-size: 1rem;
+                        font-size: 1.1rem;
                     }
 
                     .back-to-top {
@@ -1056,7 +1056,7 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     .chatbot-send {
                         width: 36px;
                         height: 36px;
-                        font-size: 0.9rem;
+                        font-size: 1.1rem;
                     }
 
                     .back-to-top {
