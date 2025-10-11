@@ -1650,7 +1650,7 @@ p {
     min-width: 0 !important;
 }
 
-/* Chatbot input container sticky fix for mobile keyboard */
+/* Chatbot input container - iOS keyboard fix (JavaScript position: sticky kullanıyor) */
 .chatbot-input-container {
     position: sticky !important;
     bottom: 0 !important;
@@ -1669,19 +1669,6 @@ p {
     .back-to-top {
         display: none !important;
     }
-}
-
-/* Chatbot input flexbox fix */
-.chatbot-input {
-    min-width: 0 !important;
-}
-
-/* Chatbot input container - iOS keyboard fix */
-.chatbot-input-container {
-    position: sticky !important;
-    bottom: 0 !important;
-    z-index: 10 !important;
-    background: white !important;
 }
 
 /* iOS Safari keyboard adjustment */
@@ -1735,19 +1722,15 @@ body {
         border-radius: 0 !important;
     }
     
+    /* Chatbot input container - JavaScript sticky position kullanıyor */
     .chatbot-input-container {
-        position: fixed !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
+        /* Position kuralları kaldırıldı - JavaScript position: sticky kullanıyor */
         border-radius: 0 !important;
         padding: 12px !important;
         padding-bottom: calc(12px + env(safe-area-inset-bottom)) !important;
         margin: 0 !important;
         background: #fff !important;
         border-top: 1px solid #E5E7EB !important;
-        z-index: 100000 !important;
-        transition: transform 0.2s ease-out !important;
     }
     
     .chatbot-input {
@@ -1812,19 +1795,15 @@ body {
         border-radius: 0 !important;
     }
     
+    /* Chatbot input container - JavaScript sticky position kullanıyor */
     .chatbot-input-container {
-        position: fixed !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
+        /* Position kuralları kaldırıldı - JavaScript position: sticky kullanıyor */
         border-radius: 0 !important;
         padding: 10px !important;
         padding-bottom: calc(10px + env(safe-area-inset-bottom)) !important;
         margin: 0 !important;
         background: #fff !important;
         border-top: 1px solid #E5E7EB !important;
-        z-index: 100000 !important;
-        transition: transform 0.2s ease-out !important;
     }
     
     .chatbot-input {
