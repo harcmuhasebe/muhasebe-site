@@ -1746,7 +1746,7 @@ body {
         background: #fff !important;
         border-top: 1px solid #E5E7EB !important;
         z-index: 100000 !important;
-        transition: transform 0.1s linear !important;
+        transition: transform 0.2s ease-out !important;
     }
     
     .chatbot-input {
@@ -1817,7 +1817,7 @@ body {
         background: #fff !important;
         border-top: 1px solid #E5E7EB !important;
         z-index: 100000 !important;
-        transition: transform 0.1s linear !important;
+        transition: transform 0.2s ease-out !important;
     }
     
     .chatbot-input {
