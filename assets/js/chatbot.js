@@ -1469,12 +1469,30 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
     setupVisualViewportAdjust() {
         const messages = document.getElementById('chatbotMessages');
         const bar = document.querySelector('.chatbot-input-container');
+        let previousKeyboard = 0;
+        let isTransitioning = false;
         
         const apply = () => {
             if (!window.visualViewport || !bar || !messages) return;
             const vv = window.visualViewport;
             // Klavye yüksekliği (iOS): tam pencere - görünür yükseklik
             const keyboard = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+            
+            // Klavye durumunda değişiklik var mı kontrol et
+            const keyboardOpening = previousKeyboard < 50 && keyboard > 50;
+            const keyboardClosing = previousKeyboard > 50 && keyboard <= 5;
+            
+            // Sadece klavye açılıp kapanırken transition ekle
+            if ((keyboardOpening || keyboardClosing) && !isTransitioning) {
+                isTransitioning = true;
+                bar.style.transition = 'transform 0.25s ease-in-out';
+                
+                // Transition bitince kaldır
+                setTimeout(() => {
+                    bar.style.transition = '';
+                    isTransitioning = false;
+                }, 300);
+            }
             
             // Eğer klavye kapalıysa (keyboard <= 5px), transform'u kaldır
             if (keyboard <= 5) {
@@ -1493,6 +1511,8 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     messages.scrollTop = messages.scrollHeight;
                 }, 100);
             }
+            
+            previousKeyboard = keyboard;
         };
         
         if (window.visualViewport) {
