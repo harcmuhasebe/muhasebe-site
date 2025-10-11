@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
     
     <!-- Ana Sayfa -->
     <url>
         <loc>https://harcmuhasebe.com.tr/</loc>
-        <lastmod>2025-10-09</lastmod>
+        <lastmod>2025-10-11</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://harcmuhasebe.com.tr/assets/images/logo.webp</image:loc>
+            <image:title>HARÇ Muhasebe - İnşaat Muhasebe Yazılımı</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://harcmuhasebe.com.tr/assets/images/dashboard-mockup.webp</image:loc>
+            <image:title>HARÇ Muhasebe Dashboard</image:title>
+        </image:image>
     </url>
     
     <!-- Ana Sayfa - Özellikler Bölümü -->
     <url>
         <loc>https://harcmuhasebe.com.tr/#features</loc>
-        <lastmod>2025-10-09</lastmod>
+        <lastmod>2025-10-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -23,15 +33,27 @@
     <!-- Ana Sayfa - Ekran Görüntüleri -->
     <url>
         <loc>https://harcmuhasebe.com.tr/#screenshots</loc>
-        <lastmod>2025-10-09</lastmod>
+        <lastmod>2025-10-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
+        <image:image>
+            <image:loc>https://harcmuhasebe.com.tr/assets/images/hakedis-screenshot.webp</image:loc>
+            <image:title>Hakediş Yönetimi</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://harcmuhasebe.com.tr/assets/images/puantaj-screenshot.webp</image:loc>
+            <image:title>Puantaj Takibi</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://harcmuhasebe.com.tr/assets/images/reports-screenshot.webp</image:loc>
+            <image:title>Detaylı Raporlama</image:title>
+        </image:image>
     </url>
     
     <!-- Ana Sayfa - Çözümler -->
     <url>
         <loc>https://harcmuhasebe.com.tr/#solutions</loc>
-        <lastmod>2025-10-09</lastmod>
+        <lastmod>2025-10-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
@@ -39,7 +61,7 @@
     <!-- Ana Sayfa - SSS -->
     <url>
         <loc>https://harcmuhasebe.com.tr/#faq</loc>
-        <lastmod>2025-10-09</lastmod>
+        <lastmod>2025-10-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -47,7 +69,7 @@
     <!-- Ana Sayfa - İletişim -->
     <url>
         <loc>https://harcmuhasebe.com.tr/#contact-form</loc>
-        <lastmod>2025-10-09</lastmod>
+        <lastmod>2025-10-11</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>

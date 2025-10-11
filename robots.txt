@@ -1,5 +1,5 @@
 # robots.txt for harcmuhasebe.com.tr
-# Son güncelleme: 2025-10-09
+# Son güncelleme: 2025-10-11
 
 User-agent: *
 Allow: /
