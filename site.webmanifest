@@ -1,6 +1,6 @@
 {
-  "name": "HARÇ MUHASEBE - Yapay Zeka Destekli İnşaat Muhasebesi",
-  "short_name": "HARÇ MUHASEBE",
+  "name": "HARÇ MUHASEBE",
+  "short_name": "Harç",
   "description": "Yapay zeka destekli inşaat muhasebe yazılımı - OCR fatura okuma, hakediş takibi, AI raporlama",
   "icons": [
     {

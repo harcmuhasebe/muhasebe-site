@@ -1,6 +1,6 @@
 # 🎯 HARÇ MUHASEBE - Kapsamlı SEO Raporu ve Kılavuzu
 
-**Son Güncelleme:** 12 Ekim 2024  
+**Son Güncelleme:** 12 Ekim 2025  
 **Proje:** HARÇ MUHASEBE - Yapay Zeka Destekli İnşaat Muhasebe Yazılımı  
 **Domain:** https://harcmuhasebe.com.tr  
 **Platform:** Vercel + Static HTML/CSS/JS
