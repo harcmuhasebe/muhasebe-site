@@ -876,11 +876,17 @@ Detaylı fiyat bilgisi için info@harcmuhasebe.com.tr adresinden bizimle iletiş
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    transition: transform 0.2s;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
+                }
+
+                .chatbot-send i {
+                    font-size: 1.1rem;
                 }
 
                 .chatbot-send:hover {
-                    transform: scale(1.1);
+                    transform: translateY(-3px);
+                    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.4);
                 }
 
                 .chatbot-send:disabled {
