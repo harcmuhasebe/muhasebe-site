@@ -878,7 +878,7 @@ p {
 .form-group select {
     width: 100%;
     padding: 12px 16px;
-    border: 2px solid #c3c3c3;
+    border: 1px solid #c3c3c3;
     border-radius: var(--border-radius);
     font-size: 0.95rem;
     transition: all 0.3s ease;
