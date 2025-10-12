@@ -171,7 +171,7 @@
 
 #### Google My Business Profili Oluştur
 ```
-İşletme Adı: HARÇ YAZILIM
+İşletme Adı: HARÇ MUHASEBE (Yapay Zeka Destekli İnşaat Muhasebe Sistemi)
 Kategori: Yazılım Şirketi
 Alt Kategori: Muhasebe Yazılımı
 Adres: İstanbul, Türkiye

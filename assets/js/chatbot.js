@@ -78,7 +78,7 @@ class HarcChatbot {
                             email: 'info@harcmuhasebe.com.tr',
                             web: 'https://www.harcmuhasebe.com.tr',
                             konum: 'İstanbul, Türkiye',
-                            firma_adi: 'HARÇ YAZILIM'
+                            firma_adi: 'HARÇ MUHASEBE'
                         };
                         
                         // Features (from tabs)
@@ -250,7 +250,7 @@ ${JSON.stringify(contextData, null, 2)}
                     email: 'info@harcmuhasebe.com.tr',
                     web: 'https://www.harcmuhasebe.com.tr',
                     konum: 'İstanbul, Türkiye',
-                    firma_adi: 'HARÇ YAZILIM'
+                    firma_adi: 'HARÇ MUHASEBE'
                 },
                 ana_ozellikler: ana.ana_ozellikler || [],
                 moduller: ana.moduller || [],

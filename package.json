@@ -8,7 +8,7 @@
     "prod": "vercel dev"
   },
   "keywords": ["muhasebe", "inşaat", "chatbot"],
-  "author": "HARÇ YAZILIM",
+  "author": "HARÇ MUHASEBE",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.0.3",

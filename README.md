@@ -1,6 +1,6 @@
-# Harç - İnşaat Muhasebe PRO
+# HARÇ MUHASEBE - Yapay Zeka Destekli İnşaat Muhasebe Sistemi
 
-Harç, inşaat sektörü için özel olarak geliştirilmiş, yapay zeka destekli muhasebe çözümüdür. Manuel veri girişini sonlandırır, hakediş ve maliyet takibini otomatikleştirir.
+**HARÇ MUHASEBE**, inşaat sektörü için özel olarak geliştirilmiş, yapay zeka destekli muhasebe çözümüdür. Manuel veri girişini sonlandırır, hakediş ve maliyet takibini otomatikleştirir.
 
 ## 🚀 Özellikler
 
@@ -123,8 +123,8 @@ muhasebe-site/
 
 ## 📄 Lisans
 
-© 2025 HARÇ YAZILIM. Tüm hakları saklıdır.
+© 2025 HARÇ MUHASEBE. Tüm hakları saklıdır.
 
 ---
 
-**Harç ile inşaat projelerinizi yapay zeka ile yönetin!** 🏗️🤖
+**HARÇ MUHASEBE ile inşaat projelerinizi yapay zeka ile yönetin!** 🏗️🤖
