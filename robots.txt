@@ -1,36 +1,25 @@
 # robots.txt for harcmuhasebe.com.tr
-# Son güncelleme: 2025-10-11
+# Son güncelleme: 2024-10-12
 
 User-agent: *
 Allow: /
 Disallow: /assets/js/config.js
 
-# Sitemap konumu
+# Sitemap konumu (Ana sitemap)
 Sitemap: https://harcmuhasebe.com.tr/sitemap.xml
-
-# Önemli sayfalar (SEO için)
-Allow: /index.html
-Allow: /gizlilik-politikasi.html
-Allow: /kullanim-kosullari.html
-
-# Gelecekte eklenebilecek kısıtlamalar
-# Disallow: /admin/
-# Disallow: /private/
-
-# Crawl hızı ayarı
-Crawl-delay: 0
 
 # Büyük arama motorları için özel kurallar
 User-agent: Googlebot
 Allow: /
-Crawl-delay: 0
 
 User-agent: Googlebot-Image
 Allow: /assets/images/
 
+User-agent: Googlebot-Video
+Allow: /
+
 User-agent: Bingbot
 Allow: /
-Crawl-delay: 0
 
 User-agent: Slurp
 Allow: /
@@ -45,13 +34,17 @@ Crawl-delay: 1
 User-agent: YandexBot
 Allow: /
 Crawl-delay: 1
+Host: harcmuhasebe.com.tr
 
-# Kötü niyetli botları engelle
+# SEO araçları (rate limit)
 User-agent: AhrefsBot
 Crawl-delay: 2
 
 User-agent: SemrushBot
 Crawl-delay: 2
 
-# Host bilgisi
-Host: https://harcmuhasebe.com.tr
+User-agent: MJ12bot
+Crawl-delay: 2
+
+User-agent: DotBot
+Crawl-delay: 2
