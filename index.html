@@ -371,11 +371,15 @@
       "@type": "VideoObject",
       "name": "Harç İnşaat Muhasebe Yazılımı - Demo Video",
       "description": "Harç muhasebe yazılımının özelliklerini ve kullanımını gösteren detaylı demo videosu. OCR fatura okuma, hakediş takibi, akıllı raporlama ve 7/24 AI chatbot özellikleri.",
-      "thumbnailUrl": "https://harcmuhasebe.com.tr/assets/images/dashboard-mockup.webp",
+      "thumbnailUrl": [
+        "https://harcmuhasebe.com.tr/assets/images/dashboard-mockup.webp",
+        "https://harcmuhasebe.com.tr/assets/images/dashboard-mockup.png"
+      ],
       "uploadDate": "2024-10-01T12:00:00+03:00",
       "duration": "PT3M",
-      "contentUrl": "https://player.vimeo.com/video/1126192631",
-      "embedUrl": "https://player.vimeo.com/video/1126192631",
+      "contentUrl": "https://vimeo.com/1126192631",
+      "embedUrl": "https://player.vimeo.com/video/1126192631?badge=0&autopause=0&player_id=0&app_id=58479",
+      "inLanguage": "tr",
       "publisher": {
         "@type": "Organization",
         "name": "HARÇ MUHASEBE",
@@ -390,6 +394,17 @@
         "@type": "InteractionCounter",
         "interactionType": "https://schema.org/WatchAction",
         "userInteractionCount": 1247
+      },
+      "potentialAction": {
+        "@type": "WatchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://harcmuhasebe.com.tr/",
+          "actionPlatform": [
+            "https://schema.org/DesktopWebPlatform",
+            "https://schema.org/MobileWebPlatform"
+          ]
+        }
       }
     }
     </script>
@@ -1168,13 +1183,22 @@
         <div class="modal-overlay" id="modalOverlay"></div>
         <div class="modal-content">
             <button class="modal-close" id="modalClose">&times;</button>
-            <div class="video-container">
+            <div class="video-container" itemscope itemtype="https://schema.org/VideoObject">
+                <meta itemprop="name" content="Harç İnşaat Muhasebe Yazılımı - Demo Video">
+                <meta itemprop="description" content="Harç muhasebe yazılımının özelliklerini ve kullanımını gösteren detaylı demo videosu. OCR fatura okuma, hakediş takibi, akıllı raporlama ve 7/24 AI chatbot özellikleri.">
+                <meta itemprop="thumbnailUrl" content="https://harcmuhasebe.com.tr/assets/images/dashboard-mockup.webp">
+                <meta itemprop="contentUrl" content="https://vimeo.com/1126192631">
+                <meta itemprop="embedUrl" content="https://player.vimeo.com/video/1126192631">
+                <meta itemprop="uploadDate" content="2024-10-01T12:00:00+03:00">
+                <meta itemprop="duration" content="PT3M">
                 <iframe 
                     id="demoVideo"
+                    itemprop="embedUrl"
                     src="https://player.vimeo.com/video/1126192631?badge=0&autopause=0&player_id=0&app_id=58479&title=0&byline=0&portrait=0" 
                     frameborder="0" 
                     allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
-                    title="Demo Video">
+                    title="Harç İnşaat Muhasebe Yazılımı - Demo Video"
+                    aria-label="Demo Video">
                 </iframe>
             </div>
         </div>
